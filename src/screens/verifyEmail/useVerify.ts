@@ -1,7 +1,8 @@
 import {useState} from 'react';
+import {ToastAndroid} from 'react-native';
+
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
-import {ToastAndroid} from 'react-native';
 import {verifyUser} from '../../store/slices/auth.slice';
 
 export const useVerify = () => {

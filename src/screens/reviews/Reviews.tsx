@@ -1,9 +1,10 @@
 import {Text, View} from 'react-native';
 import React from 'react';
+import {RouteProp, useRoute} from '@react-navigation/native';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import Review from '../../components/review/Review';
 import {styles} from './ReviewStyles';
-import {RouteProp, useRoute} from '@react-navigation/native';
 import {navigatorTypes} from '../../types/types';
 import {useReview} from './useReview';
 

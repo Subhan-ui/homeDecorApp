@@ -1,12 +1,8 @@
 import {Image} from 'react-native';
 
-const Img = ({
-  photo,
-  img,
-}: {
-  photo: string | null | undefined;
-  img: {width: number; height: number; borderRadius: number};
-}) => {
+import {imgType} from '../../types/types';
+
+const Img = ({photo, img}: imgType) => {
   return photo ? (
     <Image source={{uri: photo}} style={img} />
   ) : (

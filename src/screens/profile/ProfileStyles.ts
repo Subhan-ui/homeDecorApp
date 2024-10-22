@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, darkBrown } from '../../constants/colors';
+
+import {black, darkBrown} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrapImg: {width: '100%', alignItems: 'center', marginTop: -4},

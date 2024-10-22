@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+
 import {favouriteState} from '../../types/types';
 import client from '../../graphql/client';
 import {

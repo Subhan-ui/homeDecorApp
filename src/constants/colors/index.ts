@@ -6,5 +6,5 @@ export const peach = '#dcbeb6';
 export const darkBrown = '#363130';
 export const darkGrey = '#391713';
 export const pink = '#ffd8c7';
-export const darkPink = '#f485a4'
-export const lightestCamel = '#f4b5a436'
+export const darkPink = '#f485a4';
+export const lightestCamel = '#f4b5a436';

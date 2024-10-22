@@ -1,25 +1,15 @@
 import {ToastAndroid} from 'react-native';
+
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import {useAppDispatch} from '../../store/hook';
 import {addFavourite} from '../../store/slices/favourite.slice';
 
+import {cardType} from '../../types/types';
+
 export const setCard = () => {
   const navigation = useTypeNavigation();
   const dispatch = useAppDispatch();
-  const goToDetail = ({
-    name,
-    description,
-    price,
-    picture,
-    id,
-  }: {
-    marginBottom?: number;
-    name: string;
-    description: string;
-    price: number;
-    picture: string;
-    id: string;
-  }) => {
+  const goToDetail = ({name, description, price, picture, id}: cardType) => {
     navigation.navigate('CardDetail', {
       name,
       description,

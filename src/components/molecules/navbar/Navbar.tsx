@@ -1,12 +1,12 @@
 import {View} from 'react-native';
-import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
+
 import useTypeNavigation from '../../../navigation/useTypeNavigation';
 import {styles} from './NavbarStyles';
-import { lightCamel } from '../../../constants/colors';
+import {lightCamel} from '../../../constants/colors';
 
 const Navbar = () => {
   const navigation = useTypeNavigation();

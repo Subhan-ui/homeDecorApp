@@ -1,5 +1,7 @@
-import {Image, RefreshControl, Text, View} from 'react-native';
+import {RefreshControl, Text, View} from 'react-native';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import React from 'react';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import Input from '../../components/molecules/input/Input';
 import DateInput from '../../components/molecules/dateInput/DateInput';
@@ -7,14 +9,8 @@ import {styles} from './EditProfileStyles';
 import Button from '../../components/molecules/button/Button';
 import {useEditProfile} from './useEditProfile';
 import {editProfileInputs} from '../../constants/inputs';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Img from '../../components/img/Img';
-import { black } from '../../constants/colors';
-
-const options = [
-  {id: 1, text: 'Male'},
-  {id: 2, text: 'Female'},
-];
+import {black} from '../../constants/colors';
 
 const EditProfile = () => {
   const {
@@ -72,17 +68,6 @@ const EditProfile = () => {
             value={new Date(data.dateOfBirth)}
             onChange={date => handleChange('dateOfBirth', date.toISOString())}
           />
-          {/* <View style={styles.genderSectionWrap}>
-            <Text style={styles.optionText}>Gender</Text>
-            <View style={styles.optionsWrap}>
-              {options.map(option => (
-                <View style={styles.options} key={option.id}>
-                  <View style={styles.circle} />
-                  <Text style={styles.optionText}>{option.text}</Text>
-                </View>
-              ))}
-            </View>
-          </View> */}
         </View>
         <Button
           text="Update Profile"

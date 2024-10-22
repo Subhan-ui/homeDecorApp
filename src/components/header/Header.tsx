@@ -1,10 +1,11 @@
 import {Text, View} from 'react-native';
-import React from 'react';
-import useTypeNavigation from '../../navigation/useTypeNavigation';
 import Feather from 'react-native-vector-icons/Feather';
-import {styles} from './HeaderStyles';
 
-const Header = ({text}: {text: string}) => {
+import useTypeNavigation from '../../navigation/useTypeNavigation';
+import {styles} from './HeaderStyles';
+import {headerType} from '../../types/types';
+
+const Header = ({text}: headerType) => {
   const navigation = useTypeNavigation();
   return (
     <View style={styles.wrapper}>

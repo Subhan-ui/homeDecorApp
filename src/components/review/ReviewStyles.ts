@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, darkBrown, linen } from '../../constants/colors';
+
+import {black, darkBrown, linen} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   reviewWrap: {

@@ -201,3 +201,127 @@ export type cartState = {
   status: status;
   error: string | null;
 };
+
+export type cardType = {
+  marginBottom?: number;
+  name: string;
+  description: string;
+  price: number;
+  picture: string;
+  id: string;
+};
+
+export type cartItemType = {
+  picture: string;
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  itemId: string;
+};
+export type componentWrapperType = {
+  children: JSX.Element;
+  text: string;
+  filter?: boolean;
+  wishlist?: boolean | null;
+  refresh?: JSX.Element;
+};
+export type componentWrapperViewType = {
+  children: JSX.Element;
+  text: string;
+  filter?: boolean;
+  navbar?: boolean;
+};
+export type dropdownType = {
+  value: Rating;
+  onChange: (text: Rating) => void;
+};
+
+export type headerType = {text: string};
+export type imgType = {
+  photo: string | null | undefined;
+  img: {width: number; height: number; borderRadius: number};
+};
+
+export type ItemsProfileType = {
+  children: JSX.Element;
+  text: string;
+  onPress?: () => void;
+};
+
+export type modalType = {
+  isVisible: boolean;
+  close: () => void;
+};
+
+export type buttonType = {
+  text: string;
+  marginTop: number;
+  onPress?: () => void;
+  marginBottom?: number;
+  color?: boolean;
+};
+
+export type dateInputType = {
+  color?: boolean;
+  value: Date;
+  onChange: (date: Date) => void;
+  marginTop?: number;
+};
+export type headerItemType = {
+  text: string;
+  wishlist?: boolean | null;
+};
+export type inputType = {
+  title: string;
+  placeholder: string;
+  onChange: (text: string) => void;
+  value: string;
+  eye?: boolean;
+  marginTop?: number;
+  color?: boolean;
+  name?: string;
+};
+export type radioButtonType = {
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+};
+export type noCartType = {where: 'Cart' | 'Wishlist'};
+export type orderItemType = {
+  id: string;
+  status: string;
+  date: string;
+  picture: string;
+  head: string;
+  desc: string;
+  price: number;
+  quantity: number;
+  total: number;
+  handleConfirm: () => void;
+};
+export type reviewComponentType = {
+  picture: string | null;
+  name: string;
+  comment: string;
+};
+export type reviewModalType = {
+  isVisible: boolean;
+  close: () => void;
+  comment: string;
+  rating: Rating;
+  onChange: (name: string, value: string) => void;
+  addReview: () => void;
+};
+export type settingItemType = {
+  text: string;
+  children: JSX.Element;
+  onClick?: () => void;
+};
+export type wishlistCardType = {
+  id: string;
+  name: string;
+  price: number;
+  picture: string;
+};
+export type gridComponentType = {data: {id: number; name: string}[]};

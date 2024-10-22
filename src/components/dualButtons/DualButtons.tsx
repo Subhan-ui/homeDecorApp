@@ -1,8 +1,8 @@
 import {View, Text, Pressable} from 'react-native';
-import React from 'react';
+
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import {styles} from './DualButtonStyles';
-import { darkCamel, lightCamel, linen, peach } from '../../constants/colors';
+import {darkCamel, lightCamel, linen, peach} from '../../constants/colors';
 
 const DualButtons = ({to}: {to: 'Checkout' | 'DeliveryTime'}) => {
   const navigation = useTypeNavigation();

@@ -1,21 +1,17 @@
 import {View} from 'react-native';
-import React from 'react';
+
 import HeaderItem from '../molecules/headerItem/HeaderItem';
 import Filter from '../filter/Filter';
 import Navbar from '../molecules/navbar/Navbar';
 import {styles} from './ComponentWrapperViewStyles';
+import {componentWrapperViewType} from '../../types/types';
 
 const ComponentWrapperView = ({
   children,
   text,
   filter = true,
   navbar = true,
-}: {
-  children: JSX.Element;
-  text: string;
-  filter?: boolean;
-  navbar?: boolean;
-}) => {
+}: componentWrapperViewType) => {
   return (
     <>
       <View style={styles.fullH}>

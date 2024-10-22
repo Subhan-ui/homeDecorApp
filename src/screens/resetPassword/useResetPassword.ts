@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import {resetPasswordType} from '../../types/types';
 import {ToastAndroid} from 'react-native';
+
+import {resetPasswordType} from '../../types/types';
 import {useAppDispatch} from '../../store/hook';
 import {resetPassword} from '../../store/slices/auth.slice';
 import useTypeNavigation from '../../navigation/useTypeNavigation';

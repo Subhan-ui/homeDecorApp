@@ -1,13 +1,14 @@
 import {Text, View} from 'react-native';
 import React from 'react';
-import ComponentWrapperView from '../../components/componentWrapperView/ComponentWrapperView';
-import ProfileSection from '../../components/profileSection/ProfileSection';
-import ItemsProfile from '../../components/itemsProfile/ItemsProfile';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import ComponentWrapperView from '../../components/componentWrapperView/ComponentWrapperView';
+import ProfileSection from '../../components/profileSection/ProfileSection';
+import ItemsProfile from '../../components/itemsProfile/ItemsProfile';
 import {styles} from './ProfileStyles';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import Img from '../../components/img/Img';

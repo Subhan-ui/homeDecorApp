@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { lightCamel } from '../../constants/colors';
+
+import {lightCamel} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrapper: {

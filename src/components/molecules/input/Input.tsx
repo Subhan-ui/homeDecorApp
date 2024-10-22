@@ -1,7 +1,8 @@
 import {Image, Text, TextInput, View} from 'react-native';
-import React from 'react';
+
 import {styles} from './InputStyles';
-import { linen, peach } from '../../../constants/colors';
+import {linen, peach} from '../../../constants/colors';
+import {inputType} from '../../../types/types';
 
 const Input = ({
   eye = false,
@@ -11,16 +12,7 @@ const Input = ({
   color = false,
   value,
   onChange,
-}: {
-  title: string;
-  placeholder: string;
-  onChange: (text: string) => void;
-  value: string;
-  eye?: boolean;
-  marginTop?: number;
-  color?: boolean;
-  name?: string;
-}) => {
+}: inputType) => {
   return (
     <View style={[styles.wrap, {marginTop}]}>
       <View style={{width: '92%'}}>

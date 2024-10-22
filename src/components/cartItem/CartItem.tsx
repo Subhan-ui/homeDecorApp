@@ -1,9 +1,10 @@
 import {Image, Text, View} from 'react-native';
-import React from 'react';
 import Icon from 'react-native-vector-icons/Entypo';
+
 import {styles} from './CartItemStyles';
 import {useCartItem} from './useCartItem';
-import { darkCamel } from '../../constants/colors';
+import {darkCamel} from '../../constants/colors';
+import {cartItemType} from '../../types/types';
 
 const CartItem = ({
   picture,
@@ -12,14 +13,7 @@ const CartItem = ({
   price,
   quantity,
   itemId,
-}: {
-  picture: string;
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  itemId: string;
-}) => {
+}: cartItemType) => {
   const {addSingleItem, removeSingleItem} = useCartItem();
   return (
     <>

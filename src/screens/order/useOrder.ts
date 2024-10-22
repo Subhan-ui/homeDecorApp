@@ -1,9 +1,10 @@
 import {useCallback, useEffect, useState} from 'react';
+import {Alert, ToastAndroid} from 'react-native';
+
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import {orderType} from '../../types/types';
 import {getUserData} from '../../store/slices/auth.slice';
 import {cancelOrder, deleteOrder} from '../../store/slices/order.slice';
-import {Alert, ToastAndroid} from 'react-native';
 
 export const useOrder = () => {
   const userData = useAppSelector(state => state.auth.userData?.orders);
@@ -20,7 +21,7 @@ export const useOrder = () => {
   }, []);
 
   useEffect(() => {
-    if (userData?.length===0) {
+    if (userData?.length === 0) {
       setData(userData);
       setOk(true);
     } else {

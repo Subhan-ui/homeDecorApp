@@ -1,16 +1,11 @@
 import {Image, Pressable, Text, View} from 'react-native';
-import {styles} from './CardStyles';
-import {setCard} from './setCard';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-const Card = (props: {
-  marginBottom?: number;
-  name: string;
-  description: string;
-  price: number;
-  picture: string;
-  id: string;
-}) => {
+import {styles} from './CardStyles';
+import {setCard} from './setCard';
+import {cardType} from '../../types/types';
+
+const Card = (props: cardType) => {
   const {marginBottom = 0, name, description, price, picture, id} = props;
   const {goToDetail, limitWords, addFavourites} = setCard();
   return (

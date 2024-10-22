@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import { darkBrown, linen } from '../../constants/colors';
+
+import {darkBrown, linen} from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 

@@ -1,9 +1,10 @@
 import {ScrollView, View} from 'react-native';
-import React from 'react';
+
 import HeaderItem from '../molecules/headerItem/HeaderItem';
 import Filter from '../filter/Filter';
 import Navbar from '../molecules/navbar/Navbar';
 import {styles} from './ComponentWrapperStyles';
+import {componentWrapperType} from '../../types/types';
 
 const ComponentWrapper = ({
   children,
@@ -11,13 +12,7 @@ const ComponentWrapper = ({
   filter = true,
   wishlist = false,
   refresh,
-}: {
-  children: JSX.Element;
-  text: string;
-  filter?: boolean;
-  wishlist?: boolean | null;
-  refresh?: JSX.Element;
-}) => {
+}: componentWrapperType) => {
   return (
     <>
       <View style={styles.wrap}>

@@ -1,5 +1,7 @@
 import {Image, ScrollView, Text, View} from 'react-native';
 import React, {useCallback} from 'react';
+import {useFocusEffect} from '@react-navigation/native';
+
 import CategorySection from '../../components/categorySection/CategorySection';
 import BestSeller from '../../components/bestSeller/BestSeller';
 import NewCollection from '../../components/newCollection/NewCollection';
@@ -8,7 +10,6 @@ import {styles} from './HomeStyles';
 import {useAppDispatch} from '../../store/hook';
 import {getItems} from '../../store/slices/items.slice';
 import {getUserData} from '../../store/slices/auth.slice';
-import {useFocusEffect} from '@react-navigation/native';
 
 const Home = () => {
   const dispatch = useAppDispatch();

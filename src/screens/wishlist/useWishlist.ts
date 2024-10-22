@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import {getFavourites} from '../../store/slices/favourite.slice';
 

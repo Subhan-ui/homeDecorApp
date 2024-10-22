@@ -21,7 +21,7 @@ import {
   Wishlist,
   VerifyEmail,
   Settings,
-  Address
+  Address,
 } from '../../screens';
 import {navigation} from '../../types/types';
 

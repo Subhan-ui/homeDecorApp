@@ -1,5 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import { darkCamel, darkGrey, lightCamel } from '../../constants/colors';
+
+import {darkCamel, darkGrey, lightCamel} from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 

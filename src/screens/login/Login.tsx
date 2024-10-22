@@ -1,5 +1,6 @@
 import {Image, Text, View} from 'react-native';
 import React from 'react';
+
 import Input from '../../components/molecules/input/Input';
 import Header from '../../components/header/Header';
 import useTypeNavigation from '../../navigation/useTypeNavigation';

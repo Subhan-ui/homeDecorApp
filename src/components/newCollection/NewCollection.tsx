@@ -1,4 +1,5 @@
 import {Text, View} from 'react-native';
+
 import Card from '../card/Card';
 import {styles} from './NewCollectionStyles';
 import {useAppSelector} from '../../store/hook';

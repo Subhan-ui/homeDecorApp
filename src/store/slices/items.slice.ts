@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+
 import {itemState} from '../../types/types';
 import client from '../../graphql/client';
 import {GET_ITEMS} from '../../graphql/query';

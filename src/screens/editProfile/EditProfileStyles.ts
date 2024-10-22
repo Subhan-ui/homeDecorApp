@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, darkBrown, lightCamel, linen } from '../../constants/colors';
+
+import {black, darkBrown, lightCamel, linen} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   imgSection: {width: '100%', alignItems: 'center', marginTop: -4},
@@ -45,5 +46,4 @@ export const styles = StyleSheet.create({
     bottom: 5,
     right: 5,
   },
-  
 });

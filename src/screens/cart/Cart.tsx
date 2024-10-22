@@ -1,5 +1,6 @@
 import {ScrollView, View, Text, RefreshControl} from 'react-native';
 import React from 'react';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import CartItem from '../../components/cartItem/CartItem';
 import {styles} from './CartStyles';

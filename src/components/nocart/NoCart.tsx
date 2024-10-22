@@ -1,8 +1,10 @@
 import {Text, View, Image} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {styles} from './NoCartStyles';
 
-const NoCart = ({where}: {where: 'Cart' | 'Wishlist'}) => {
+import {styles} from './NoCartStyles';
+import {noCartType} from '../../types/types';
+
+const NoCart = ({where}: noCartType) => {
   const [img, setImg] = useState(require('../../assets/icons/cart.png'));
   useEffect(() => {
     if (where === 'Cart') {

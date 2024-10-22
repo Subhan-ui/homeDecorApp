@@ -1,8 +1,9 @@
 import React from 'react';
+import {Text} from 'react-native';
+
 import Card from '../../components/card/Card';
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import {setItemsPage} from './setItemsPage';
-import {Text} from 'react-native';
 
 const ItemsPage = () => {
   const {items, ok, data} = setItemsPage();

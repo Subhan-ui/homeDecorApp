@@ -1,5 +1,6 @@
 import {Image, Text, View} from 'react-native';
 import React from 'react';
+
 import ComponentWrapperView from '../../components/componentWrapperView/ComponentWrapperView';
 import DualButtons from '../../components/dualButtons/DualButtons';
 import {styles} from './SuccessPaymentStyles';

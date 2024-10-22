@@ -1,11 +1,12 @@
 import {useEffect, useState} from 'react';
-import {updateUserType} from '../../types/types';
 import {ToastAndroid} from 'react-native';
+import storage from '@react-native-firebase/storage';
 import {
   ImagePickerResponse,
   launchImageLibrary,
 } from 'react-native-image-picker';
-import storage from '@react-native-firebase/storage';
+
+import {updateUserType} from '../../types/types';
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import {getUserData, updateUser} from '../../store/slices/auth.slice';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
@@ -26,8 +27,8 @@ export const useEditProfile = () => {
   const onRefresh = async () => {
     setRefreshing(true);
     const res = await dispatch(getUserData());
-    if(res){
-        setRefreshing(false)
+    if (res) {
+      setRefreshing(false);
     }
   };
   useEffect(() => {
@@ -39,7 +40,7 @@ export const useEditProfile = () => {
         dateOfBirth: newDate,
         mobileNumber: userData.mobileNumber,
         email: userData.email,
-        picture: userData.profilePicture ||'',
+        picture: userData.profilePicture || '',
       });
     }
   }, []);
@@ -49,9 +50,9 @@ export const useEditProfile = () => {
       const reference = storage().ref(namepic);
       const pathToFile = data.picture;
 
-      console.log('path->>>',typeof pathToFile)
+      console.log('path->>>', typeof pathToFile);
       const res = await reference.putFile(pathToFile);
-      console.log('res---->' , res)
+      console.log('res---->', res);
     }
   };
   const handleChoosePhoto = async () => {
@@ -68,7 +69,7 @@ export const useEditProfile = () => {
               ToastAndroid.LONG,
             );
           } else {
-            console.log('response->>>>>   ', response)
+            console.log('response->>>>>   ', response);
             let imageUri = response?.assets?.[0]?.uri;
             let imageName = response?.assets?.[0]?.fileName;
             if (imageUri && imageName) {
@@ -113,37 +114,39 @@ export const useEditProfile = () => {
       if (namepic && data.picture) {
         await uploadImage();
         url = await storage().ref(namepic).getDownloadURL();
-    }
-    if(url){
-    setData(prev => ({
-        ...prev,
-        picture: url ||'',
-    }));
-    console.log('url->>>>', data.picture);
-      
-      const res = await dispatch(updateUser({
-        name,
-        picture: url,
-        dateOfBirth,
-        mobileNumber,
-        email,
-      }));
-      console.log(res);
-      if (res.meta.requestStatus === 'fulfilled') {
-        ToastAndroid.show('Profile Updated Successfully', ToastAndroid.LONG);
-        navigation.navigate('Home');
-        return;
       }
-      ToastAndroid.show('There might be some error here', ToastAndroid.SHORT);
-    }
+      if (url) {
+        setData(prev => ({
+          ...prev,
+          picture: url || '',
+        }));
+        console.log('url->>>>', data.picture);
+
+        const res = await dispatch(
+          updateUser({
+            name,
+            picture: url,
+            dateOfBirth,
+            mobileNumber,
+            email,
+          }),
+        );
+        console.log(res);
+        if (res.meta.requestStatus === 'fulfilled') {
+          ToastAndroid.show('Profile Updated Successfully', ToastAndroid.LONG);
+          navigation.navigate('Home');
+          return;
+        }
+        ToastAndroid.show('There might be some error here', ToastAndroid.SHORT);
+      }
     } catch (error) {
-      ToastAndroid.show('error'+error as string, ToastAndroid.SHORT);
+      ToastAndroid.show(('error' + error) as string, ToastAndroid.SHORT);
     }
   };
   return {
     data,
     handleChange,
-    refreshing, 
+    refreshing,
     onRefresh,
     photo: data.picture,
     handleChoosePhoto,

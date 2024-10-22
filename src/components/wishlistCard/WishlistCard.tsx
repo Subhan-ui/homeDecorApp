@@ -1,21 +1,13 @@
 import {Image, Text, View} from 'react-native';
 import React from 'react';
-import {styles} from './WishlistCardStyles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useWishCard} from './useWishCard';
-import { lightCamel } from '../../constants/colors';
 
-const WishlistCard = ({
-  id,
-  name,
-  price,
-  picture,
-}: {
-  id: string;
-  name: string;
-  price: number;
-  picture: string;
-}) => {
+import {styles} from './WishlistCardStyles';
+import {useWishCard} from './useWishCard';
+import {lightCamel} from '../../constants/colors';
+import {wishlistCardType} from '../../types/types';
+
+const WishlistCard = ({id, name, price, picture}: wishlistCardType) => {
   const {removeFav} = useWishCard();
   return (
     <>

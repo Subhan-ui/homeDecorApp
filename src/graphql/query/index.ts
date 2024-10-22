@@ -367,10 +367,10 @@ export const GET_REVIEWS = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation ADD_REVIEW($rating: Rating!, $comment: String!, $id: String!) {
-  addReview(rating: $rating, comment: $comment, productId: $id)
-}
-`
+  mutation ADD_REVIEW($rating: Rating!, $comment: String!, $id: String!) {
+    addReview(rating: $rating, comment: $comment, productId: $id)
+  }
+`;
 
 export const GET_ORDERS = gql`
   query GET_ORDERS {

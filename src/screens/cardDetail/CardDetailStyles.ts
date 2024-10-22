@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, lightCamel } from '../../constants/colors';
+
+import {black, lightCamel} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   img: {width: '100%', height: 267, borderRadius: 20},

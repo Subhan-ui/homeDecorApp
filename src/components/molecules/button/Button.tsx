@@ -1,7 +1,8 @@
 import {Pressable, Text, View} from 'react-native';
-import React from 'react';
+
 import {styles} from './ButtonStyles';
-import { darkCamel, lightCamel, linen, peach } from '../../../constants/colors';
+import {darkCamel, lightCamel, linen, peach} from '../../../constants/colors';
+import {buttonType} from '../../../types/types';
 
 const Button = ({
   text,
@@ -9,13 +10,7 @@ const Button = ({
   onPress,
   marginBottom,
   color = false,
-}: {
-  text: string;
-  marginTop: number;
-  onPress?: () => void;
-  marginBottom?: number;
-  color?: boolean;
-}) => {
+}: buttonType) => {
   const backgroundColor = color ? linen : lightCamel;
   const textColor = color ? peach : darkCamel;
   return (

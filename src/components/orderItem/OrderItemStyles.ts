@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, darkCamel, lightCamel, peach } from '../../constants/colors';
+
+import {black, darkCamel, lightCamel, peach} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   orderWrap: {
@@ -24,7 +25,13 @@ export const styles = StyleSheet.create({
   },
   heading: {fontWeight: '500', fontSize: 15, color: darkCamel},
   desc: {fontWeight: '300', fontSize: 12, color: black, width: '80%'},
-  imgWrap: {flexDirection: 'row', gap: 4, marginTop: 12, position: 'absolute', right: 0},
+  imgWrap: {
+    flexDirection: 'row',
+    gap: 4,
+    marginTop: 12,
+    position: 'absolute',
+    right: 0,
+  },
   priceWrap: {
     width: '100%',
     justifyContent: 'space-between',

@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { darkCamel, darkGrey, lightCamel, linen } from '../../constants/colors';
+
+import {darkCamel, darkGrey, lightCamel, linen} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   text: {

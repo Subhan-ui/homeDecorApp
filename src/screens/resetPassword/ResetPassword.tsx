@@ -1,5 +1,6 @@
 import {Text, View} from 'react-native';
 import React from 'react';
+
 import Header from '../../components/header/Header';
 import Input from '../../components/molecules/input/Input';
 import {styles} from './ResetPasswordStyles';

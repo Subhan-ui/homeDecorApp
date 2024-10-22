@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { lightCamel, peach } from '../../constants/colors';
+import {lightCamel, peach} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   scroll: {marginTop: 20, height: 30},

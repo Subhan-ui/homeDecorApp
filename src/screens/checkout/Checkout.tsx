@@ -1,13 +1,14 @@
-import {RefreshControl, Text, View} from 'react-native';
 import React, {useState} from 'react';
+import {RefreshControl, Text, View} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import RadioButton from '../../components/molecules/radioButton/RadioButton';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import {styles} from './CheckoutStyles';
 import Button from '../../components/molecules/button/Button';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useCheckout} from './useCheckout';
-import { lightCamel } from '../../constants/colors';
+import {lightCamel} from '../../constants/colors';
 
 const radios = [
   {id: 1, label: 'Cash on Delivery'},

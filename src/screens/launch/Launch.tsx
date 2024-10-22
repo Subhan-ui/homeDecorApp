@@ -1,6 +1,7 @@
 import {Image, Pressable, Text, View} from 'react-native';
+
 import {styles} from './LaunchStyles';
-import { darkCamel, lightCamel, linen, peach } from '../../constants/colors';
+import {darkCamel, lightCamel, linen, peach} from '../../constants/colors';
 
 const Launch = () => {
   return (

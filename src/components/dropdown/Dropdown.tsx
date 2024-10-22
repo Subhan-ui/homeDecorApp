@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { Rating } from '../../types/types';
-import { linen } from '../../constants/colors';
 
-const data:{label: Rating, value: Rating,}[] = [
+import {dropdownType, Rating} from '../../types/types';
+import {linen} from '../../constants/colors';
+
+const data: {label: Rating; value: Rating}[] = [
   {label: 'WORST', value: 'WORST'},
   {label: 'BAD', value: 'BAD'},
   {label: 'NORMAL', value: 'NORMAL'},
@@ -13,8 +14,7 @@ const data:{label: Rating, value: Rating,}[] = [
   {label: 'BEST', value: 'BEST'},
 ];
 
-const DropdownComponent = ({value, onChange}:{value: Rating, onChange: (text: Rating) => void}) => {
-
+const DropdownComponent = ({value, onChange}: dropdownType) => {
   const [isFocus, setIsFocus] = useState(false);
 
   return (

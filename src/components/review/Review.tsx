@@ -1,17 +1,10 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Image, Text, View} from 'react-native';
+
 import {styles} from './ReviewStyles';
 import Img from '../img/Img';
+import {reviewComponentType} from '../../types/types';
 
-const Review = ({
-  picture,
-  name,
-  comment,
-}: {
-  picture: string | null;
-  name: string;
-  comment: string;
-}) => {
+const Review = ({picture, name, comment}: reviewComponentType) => {
   return (
     <View style={styles.reviewWrap}>
       <View style={styles.imgWrap}>

@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, Dimensions, Pressable} from 'react-native';
-import {styles} from './CategoryButtonStyles';
 
-const GridComponent = ({data}: {data: {id: number; name: string}[]}) => {
+import {styles} from './CategoryButtonStyles';
+import {gridComponentType} from '../../types/types';
+
+const GridComponent = ({data}: gridComponentType) => {
   const [height, setHeight] = useState<number>(0);
   const screenHeight = Dimensions.get('window').height;
   const screenWidth = Dimensions.get('window').width;

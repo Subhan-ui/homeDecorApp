@@ -1,6 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useAppSelector} from '../../store/hook';
 import {useState} from 'react';
+
+import {useAppSelector} from '../../store/hook';
 
 export const useProfile = () => {
   const states = useAppSelector(state => state.auth.userData);

@@ -1,4 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+
+import client from '../../graphql/client';
 import {
   AuthState,
   loginType,
@@ -7,7 +9,6 @@ import {
   updateUserType,
   verifyType,
 } from '../../types/types';
-import client from '../../graphql/client';
 import {
   FORGOT_PASSWORD,
   LOGIN_USER,
@@ -123,7 +124,7 @@ export const updateUser = createAsyncThunk(
         variables,
         refetchQueries: [{query: WHOLE_DATA}],
       });
-      console.log('async response ->>>  ',response)
+      console.log('async response ->>>  ', response);
       return response?.data?.updateUser;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Update user failed');
@@ -220,7 +221,7 @@ const authSlice = createSlice({
       .addCase(updateUser.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
-      })
+      });
   },
 });
 

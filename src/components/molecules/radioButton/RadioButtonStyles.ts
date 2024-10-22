@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { black, darkGrey, lightCamel } from '../../../constants/colors';
+
+import {black, darkGrey, lightCamel} from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {flexDirection: 'row', alignItems: 'center'},

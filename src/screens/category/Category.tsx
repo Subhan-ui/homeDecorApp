@@ -1,5 +1,6 @@
 import {View} from 'react-native';
 import React from 'react';
+
 import CategoryButton from '../../components/categoryButton/CategoryButton';
 import ComponentWrapperView from '../../components/componentWrapperView/ComponentWrapperView';
 

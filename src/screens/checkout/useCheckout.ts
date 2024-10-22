@@ -1,8 +1,9 @@
 import {useCallback, useState} from 'react';
+import {ToastAndroid} from 'react-native';
+
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import {makeOrder} from '../../store/slices/order.slice';
 import {getUserData} from '../../store/slices/auth.slice';
-import {ToastAndroid} from 'react-native';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 
 export const useCheckout = () => {
@@ -12,9 +13,9 @@ export const useCheckout = () => {
   const dispatch = useAppDispatch();
   const navigation = useTypeNavigation();
   const [refreshing, setRefreshing] = useState(false);
-  const makingOrder = async (id: string|undefined) => {
+  const makingOrder = async (id: string | undefined) => {
     try {
-      if(!id){
+      if (!id) {
         ToastAndroid.show('No order placed', ToastAndroid.LONG);
         return;
       }

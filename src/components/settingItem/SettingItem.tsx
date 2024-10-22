@@ -1,19 +1,12 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 import React from 'react';
-
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {styles} from './SettingItemStyle';
-import { darkBrown } from '../../constants/colors';
 
-const SettingItem = ({
-  text,
-  children,
-  onClick,
-}: {
-  text: string;
-  children: JSX.Element;
-  onClick?: () => void;
-}) => {
+import {styles} from './SettingItemStyle';
+import {darkBrown} from '../../constants/colors';
+import {settingItemType} from '../../types/types';
+
+const SettingItem = ({text, children, onClick}: settingItemType) => {
   return (
     <Pressable onPress={onClick} style={styles.btnWrap}>
       <View style={styles.iconWrap}>

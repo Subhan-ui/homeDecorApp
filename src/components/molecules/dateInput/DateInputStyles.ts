@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { black, darkBrown } from '../../../constants/colors';
+import {black, darkBrown} from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {width: '100%', gap: 8},

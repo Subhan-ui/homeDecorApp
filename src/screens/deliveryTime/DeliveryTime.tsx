@@ -1,4 +1,5 @@
 import {Image, Text, View} from 'react-native';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import {styles} from './DeliveryTimeStyles';

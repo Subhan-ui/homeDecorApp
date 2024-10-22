@@ -23,4 +23,5 @@ export const styles = StyleSheet.create({
     marginTop: 19.88,
     marginBottom: 31,
   },
+  belowWrap: {width: '100%', display: 'flex', alignItems: 'center'},
 });

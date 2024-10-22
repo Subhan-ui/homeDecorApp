@@ -1,4 +1,5 @@
 import {Text, View} from 'react-native';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import WishlistCard from '../../components/wishlistCard/WishlistCard';
 import {styles} from './WishlistStyles';

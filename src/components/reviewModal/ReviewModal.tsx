@@ -1,8 +1,9 @@
 import {Modal, Text, View} from 'react-native';
+
 import DropdownComponent from '../dropdown/Dropdown';
 import Input from '../molecules/input/Input';
 import Button from '../molecules/button/Button';
-import {Rating} from '../../types/types';
+import {reviewModalType} from '../../types/types';
 import {styles} from './ReviewModalStyles';
 
 const ReviewModal = ({
@@ -12,14 +13,7 @@ const ReviewModal = ({
   rating,
   onChange,
   addReview,
-}: {
-  isVisible: boolean;
-  close: () => void;
-  comment: string;
-  rating: Rating;
-  onChange: (name: string, value: string) => void;
-  addReview: () => void;
-}) => {
+}: reviewModalType) => {
   return (
     <Modal
       presentationStyle="overFullScreen"

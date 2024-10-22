@@ -1,16 +1,17 @@
 import {useCallback, useState} from 'react';
-import {addressType} from '../../types/types';
 import {Alert, ToastAndroid} from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
+
+import {addressType} from '../../types/types';
 import {useAppDispatch} from '../../store/hook';
+import useTypeNavigation from '../../navigation/useTypeNavigation';
+import {getUserData} from '../../store/slices/auth.slice';
 import {
   addAddress,
   deleteAddress,
   getAddress,
   updateAddress,
 } from '../../store/slices/address.slice';
-import useTypeNavigation from '../../navigation/useTypeNavigation';
-import {useFocusEffect} from '@react-navigation/native';
-import {getUserData} from '../../store/slices/auth.slice';
 
 export const useAddress = () => {
   const [data, setData] = useState<addressType>({

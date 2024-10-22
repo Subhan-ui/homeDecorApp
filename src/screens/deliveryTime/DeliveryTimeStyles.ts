@@ -1,5 +1,13 @@
 import {StyleSheet} from 'react-native';
-import { darkBrown, darkCamel, darkGrey, lightCamel, linen, pink } from '../../constants/colors';
+
+import {
+  darkBrown,
+  darkCamel,
+  darkGrey,
+  lightCamel,
+  linen,
+  pink,
+} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   stSectionWrap: {width: '100%', gap: 11},

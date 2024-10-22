@@ -1,8 +1,10 @@
 import {Image, Text, View} from 'react-native';
-import React from 'react';
-import {styles} from './OrderItemStyles';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { lightCamel } from '../../constants/colors';
+
+import {styles} from './OrderItemStyles';
+import {lightCamel} from '../../constants/colors';
+import {orderItemType} from '../../types/types';
+import {useOrderItem} from './useOrderItem';
 
 const OrderItem = ({
   status,
@@ -15,41 +17,8 @@ const OrderItem = ({
   total,
   id,
   handleConfirm,
-}: {
-  id: string;
-  status: string;
-  date: string;
-  picture: string;
-  head: string;
-  desc: string;
-  price: number;
-  quantity: number;
-  total: number;
-  handleConfirm: () => void;
-}) => {
-  function formatDate(isoString: string): string {
-    const date = new Date(isoString);
-
-    const day = date.getDate();
-    const monthNames = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
-
-    const month = monthNames[date.getMonth()];
-
-    return `${month} ${day}`;
-  }
+}: orderItemType) => {
+  const {formatDate} = useOrderItem();
   return (
     <View style={{gap: 3}}>
       <View style={styles.orderWrap}>

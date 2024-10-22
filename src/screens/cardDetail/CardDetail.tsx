@@ -1,15 +1,16 @@
 import {Image, Text, View} from 'react-native';
 import React from 'react';
+import {RouteProp, useRoute} from '@react-navigation/native';
+import Entypo from 'react-native-vector-icons/Entypo';
+
 import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import StarRating from '../../components/starRating/StarRating';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import Button from '../../components/molecules/button/Button';
-import {styles} from './CardDetailStyles';
-import {RouteProp, useRoute} from '@react-navigation/native';
-import {navigatorTypes} from '../../types/types';
-import Entypo from 'react-native-vector-icons/Entypo';
-import {useCardDetail} from './useCardDetail';
 import ReviewModal from '../../components/reviewModal/ReviewModal';
+import {styles} from './CardDetailStyles';
+import {navigatorTypes} from '../../types/types';
+import {useCardDetail} from './useCardDetail';
 import {lightCamel} from '../../constants/colors';
 
 type CardDetailRouteProp = RouteProp<navigatorTypes, 'CardDetail'>;

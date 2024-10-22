@@ -1,15 +1,9 @@
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {styles} from './RadioButtonStyles';
 
-const RadioButton = ({
-  label,
-  checked,
-  onChange,
-}: {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
-}) => {
+import {styles} from './RadioButtonStyles';
+import {radioButtonType} from '../../../types/types';
+
+const RadioButton = ({label, checked, onChange}: radioButtonType) => {
   return (
     <>
       <TouchableOpacity onPress={() => onChange()} style={styles.wrap}>

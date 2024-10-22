@@ -1,5 +1,6 @@
 import {Image, ScrollView, Text, View} from 'react-native';
 import React from 'react';
+
 import Header from '../../components/header/Header';
 import Input from '../../components/molecules/input/Input';
 import DateInput from '../../components/molecules/dateInput/DateInput';
@@ -49,7 +50,7 @@ const Signup = () => {
         <Text style={styles.bold}>Terms of Service</Text> and{' '}
         <Text style={styles.bold}>Privacy Policy</Text>.
       </Text>
-      <View style={{width: '100%', display: 'flex', alignItems: 'center'}}>
+      <View style={styles.belowWrap}>
         <Button text="Sign Up" marginTop={0} onPress={handleSubmit} />
         <View style={{width: '100%'}}>
           <Text

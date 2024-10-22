@@ -1,12 +1,13 @@
 import {View} from 'react-native';
 import React from 'react';
-import SettingItem from '../../components/settingItem/SettingItem';
-import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Octicons from 'react-native-vector-icons/Octicons';
+
+import SettingItem from '../../components/settingItem/SettingItem';
+import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 import useTypeNavigation from '../../navigation/useTypeNavigation';
-import { black } from '../../constants/colors';
+import {black} from '../../constants/colors';
 
 const Settings = () => {
   const navigation = useTypeNavigation();

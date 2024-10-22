@@ -1,10 +1,10 @@
 import {useRef} from 'react';
 import {Provider} from 'react-redux';
+import {ApolloProvider} from '@apollo/client';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {makeStore, AppStore} from '../store/store';
-import {ApolloProvider} from '@apollo/client';
 import client from '../graphql/client';
-import {NavigationContainer} from '@react-navigation/native';
 import {AuthProvider} from '../navigation/authContext';
 
 export default function StoreProvider({children}: {children: React.ReactNode}) {

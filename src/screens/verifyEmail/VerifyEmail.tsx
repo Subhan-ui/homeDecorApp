@@ -1,4 +1,5 @@
 import {Text, View} from 'react-native';
+
 import Header from '../../components/header/Header';
 import Input from '../../components/molecules/input/Input';
 import {styles} from './VerifyEmailStyles';

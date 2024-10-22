@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { darkBrown, lightCamel } from '../../constants/colors';
+
+import {darkBrown, lightCamel} from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   btnWrap: {

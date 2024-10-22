@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import {SignupType} from '../../types/types';
 import {ToastAndroid} from 'react-native';
+
+import {SignupType} from '../../types/types';
 import {useAppDispatch} from '../../store/hook';
 import {signup} from '../../store/slices/auth.slice';
 import useTypeNavigation from '../../navigation/useTypeNavigation';

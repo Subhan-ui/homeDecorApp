@@ -1,15 +1,11 @@
 import {Modal, Pressable, Text, View} from 'react-native';
+
 import {useAuth} from '../../navigation/authContext';
 import {styles} from './LogoutModalStyle';
-import { darkCamel, lightCamel, linen, peach } from '../../constants/colors';
+import {darkCamel, lightCamel, linen, peach} from '../../constants/colors';
+import {modalType} from '../../types/types';
 
-const LogoutModal = ({
-  isVisible,
-  close,
-}: {
-  isVisible: boolean;
-  close: () => void;
-}) => {
+const LogoutModal = ({isVisible, close}: modalType) => {
   const {logout} = useAuth();
 
   return (

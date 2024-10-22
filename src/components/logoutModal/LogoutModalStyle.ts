@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+
 import {darkBrown, lightestCamel} from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;

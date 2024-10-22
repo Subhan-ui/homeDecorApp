@@ -1,10 +1,11 @@
 import {ToastAndroid} from 'react-native';
+import {useState} from 'react';
+
 import {useAppDispatch} from '../../store/hook';
 import {addFavourite} from '../../store/slices/favourite.slice';
 import {addOrderItem} from '../../store/slices/order.slice';
-import {useState} from 'react';
-import { addReviews } from '../../store/slices/review.slice';
-import { Rating } from '../../types/types';
+import {addReviews} from '../../store/slices/review.slice';
+import {Rating} from '../../types/types';
 
 export const useCardDetail = () => {
   const dispatch = useAppDispatch();
@@ -37,15 +38,15 @@ export const useCardDetail = () => {
       ToastAndroid.show(error.message, ToastAndroid.SHORT);
     }
   };
-  const addReview = async(id: string)=>{
+  const addReview = async (id: string) => {
     try {
-      const response = await dispatch(addReviews({id, ...data}))
+      const response = await dispatch(addReviews({id, ...data}));
       ToastAndroid.show('Review added.', ToastAndroid.SHORT);
-      console.log(response)
-    } catch (error:any) {
-      ToastAndroid.show(error.message, ToastAndroid.SHORT)
+      console.log(response);
+    } catch (error: any) {
+      ToastAndroid.show(error.message, ToastAndroid.SHORT);
     }
-  }
+  };
   return {
     addFavourites,
     addToCart,

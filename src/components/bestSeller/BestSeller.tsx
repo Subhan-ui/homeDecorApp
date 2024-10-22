@@ -1,5 +1,5 @@
 import {Image, Text, View} from 'react-native';
-import React from 'react';
+
 import {styles} from './BestSellerStyles';
 
 const BestSeller = () => {

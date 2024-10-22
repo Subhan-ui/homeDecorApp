@@ -1,5 +1,6 @@
-import {Rating, reviewState} from '../../types/types';
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+
+import {Rating, reviewState} from '../../types/types';
 import client from '../../graphql/client';
 import {ADD_REVIEW, GET_REVIEWS} from '../../graphql/query';
 
@@ -65,13 +66,13 @@ const reviewSlice = createSlice({
         state.status = 'loading';
         state.error = null;
       })
-      .addCase(addReviews.fulfilled, (state, action) => {
+      .addCase(addReviews.fulfilled, state => {
         state.status = 'succeeded';
       })
       .addCase(addReviews.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
-      })
+      });
   },
 });
 

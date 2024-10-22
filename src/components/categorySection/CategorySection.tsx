@@ -1,7 +1,7 @@
 import {Image, View} from 'react-native';
-import React from 'react';
+
 import {styles} from './CategorySectionStyles';
-import { lightCamel } from '../../constants/colors';
+import {lightCamel} from '../../constants/colors';
 
 const images = {
   example1: require('../../assets/icons/categories/category1.png'),
@@ -19,8 +19,7 @@ const CategorySection = ({
   select: boolean;
 }) => {
   return (
-    <View
-      style={[styles.wrap, {backgroundColor: select ? lightCamel : ''}]}>
+    <View style={[styles.wrap, {backgroundColor: select ? lightCamel : ''}]}>
       <Image source={images[path]} />
     </View>
   );

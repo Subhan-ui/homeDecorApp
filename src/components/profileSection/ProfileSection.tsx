@@ -1,9 +1,10 @@
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, Text, View} from 'react-native';
 import React from 'react';
 import Octicons from 'react-native-vector-icons/Octicons';
+
 import useTypeNavigation from '../../navigation/useTypeNavigation';
 import {styles} from './ProfileSectionStyles';
-import { black } from '../../constants/colors';
+import {black} from '../../constants/colors';
 
 const ProfileSection = () => {
   const navigation = useTypeNavigation();
