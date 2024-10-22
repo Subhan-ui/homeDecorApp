@@ -33,7 +33,6 @@ export const useCardDetail = () => {
     try {
       const response = await dispatch(addOrderItem({id, quantity: 1}));
       ToastAndroid.show('Item added to Cart.', ToastAndroid.SHORT);
-      console.log(response);
     } catch (error: any) {
       ToastAndroid.show(error.message, ToastAndroid.SHORT);
     }
@@ -42,7 +41,6 @@ export const useCardDetail = () => {
     try {
       const response = await dispatch(addReviews({id, ...data}));
       ToastAndroid.show('Review added.', ToastAndroid.SHORT);
-      console.log(response);
     } catch (error: any) {
       ToastAndroid.show(error.message, ToastAndroid.SHORT);
     }

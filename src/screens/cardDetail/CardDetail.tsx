@@ -28,7 +28,6 @@ const CardDetail = () => {
     addReview,
   } = useCardDetail();
   const {name, description, price, picture, id} = route.params;
-  console.log(isVisible);
   return (
     <ComponentWrapper text={name}>
       <>

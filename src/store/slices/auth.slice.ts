@@ -124,7 +124,6 @@ export const updateUser = createAsyncThunk(
         variables,
         refetchQueries: [{query: WHOLE_DATA}],
       });
-      console.log('async response ->>>  ', response);
       return response?.data?.updateUser;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Update user failed');

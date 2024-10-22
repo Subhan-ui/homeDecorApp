@@ -27,7 +27,6 @@ export const useVerify = () => {
     setData(prev => ({...prev, email: data.email.toLowerCase()}));
     try {
       const response = await dispatch(verifyUser(data));
-      console.log(response.payload);
       if (user.status === 'succeeded') {
         navigation.navigate('Login');
         ToastAndroid.show('Email verified successfully', ToastAndroid.SHORT);

@@ -8,7 +8,6 @@ export const useCartItem = () => {
   const addSingleItem = async (id: string) => {
     try {
       const res = await dispatch(addOrderItem({id, quantity: 1}));
-      console.log(res);
       ToastAndroid.show(
         `Refresh to see changes: ${res.payload}`,
         ToastAndroid.LONG,
@@ -20,7 +19,6 @@ export const useCartItem = () => {
   const removeSingleItem = async (id: string) => {
     try {
       const res = await dispatch(removeOrderItem(id));
-      console.log(res.type);
       ToastAndroid.show(
         `Refresh to see changes: ${res.payload}`,
         ToastAndroid.LONG,

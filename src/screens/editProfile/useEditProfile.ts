@@ -50,9 +50,7 @@ export const useEditProfile = () => {
       const reference = storage().ref(namepic);
       const pathToFile = data.picture;
 
-      console.log('path->>>', typeof pathToFile);
       const res = await reference.putFile(pathToFile);
-      console.log('res---->', res);
     }
   };
   const handleChoosePhoto = async () => {
@@ -69,7 +67,6 @@ export const useEditProfile = () => {
               ToastAndroid.LONG,
             );
           } else {
-            console.log('response->>>>>   ', response);
             let imageUri = response?.assets?.[0]?.uri;
             let imageName = response?.assets?.[0]?.fileName;
             if (imageUri && imageName) {
@@ -120,7 +117,6 @@ export const useEditProfile = () => {
           ...prev,
           picture: url || '',
         }));
-        console.log('url->>>>', data.picture);
 
         const res = await dispatch(
           updateUser({
@@ -131,7 +127,6 @@ export const useEditProfile = () => {
             email,
           }),
         );
-        console.log(res);
         if (res.meta.requestStatus === 'fulfilled') {
           ToastAndroid.show('Profile Updated Successfully', ToastAndroid.LONG);
           navigation.navigate('Home');

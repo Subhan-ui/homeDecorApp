@@ -120,7 +120,6 @@ export const useAddress = () => {
               navigation.navigate('Home');
               resetData();
               ToastAndroid.show('Address Deleted', ToastAndroid.SHORT);
-              console.log(response.payload);
             } catch (error: any) {
               ToastAndroid.show(error.message, ToastAndroid.SHORT);
             }

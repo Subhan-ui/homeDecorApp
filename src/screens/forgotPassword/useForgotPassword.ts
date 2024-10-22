@@ -27,7 +27,6 @@ export const useForgotPassword = () => {
       const response = await dispatch(forgotPassword(email));
       navigation.navigate('ResetPassword');
       ToastAndroid.show('Please check your email', ToastAndroid.SHORT);
-      console.log(response.payload);
     } catch (error) {
       ToastAndroid.show(error as string, ToastAndroid.SHORT);
     }

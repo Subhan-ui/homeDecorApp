@@ -9,7 +9,6 @@ export const useReview = (id: string) => {
   useEffect(() => {
     (async () => {
       const res = await dispatch(getReviews(id));
-      console.log(res);
     })();
   }, []);
   return {reviews};
