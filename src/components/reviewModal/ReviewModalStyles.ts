@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { black } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
@@ -17,6 +18,6 @@ export const styles = StyleSheet.create({
     paddingTop: 12,
     paddingHorizontal: 20,
   },
-  h1: {fontWeight: '600', fontSize: 20, color: '#4b4544'},
+  h1: {fontWeight: '600', fontSize: 20, color: black},
   inputWrap: {width: '100%', marginTop: 35},
 });

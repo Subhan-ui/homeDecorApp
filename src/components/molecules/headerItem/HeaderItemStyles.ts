@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { lightCamel } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {
@@ -10,6 +11,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  text: {fontWeight: '600', fontSize: 20, color: '#f4b5a4'},
+  text: {fontWeight: '600', fontSize: 20, color: lightCamel},
   imgWrap: {flexDirection: 'row'},
 });

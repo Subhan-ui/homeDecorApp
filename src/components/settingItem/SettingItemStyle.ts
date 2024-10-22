@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { darkBrown, lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   btnWrap: {
@@ -9,12 +10,12 @@ export const styles = StyleSheet.create({
   },
   iconWrap: {flexDirection: 'row', gap: 23, alignItems: 'center'},
   textWrap: {
-    backgroundColor: '#f4b5a4',
+    backgroundColor: lightCamel,
     width: 30,
     height: 30,
     borderRadius: 55,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {color: '#363130', fontWeight: '500', fontSize: 15},
+  text: {color: darkBrown, fontWeight: '500', fontSize: 15},
 });

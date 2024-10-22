@@ -9,6 +9,7 @@ import {useEditProfile} from './useEditProfile';
 import {editProfileInputs} from '../../constants/inputs';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Img from '../../components/img/Img';
+import { black } from '../../constants/colors';
 
 const options = [
   {id: 1, text: 'Male'},
@@ -45,7 +46,7 @@ const EditProfile = () => {
               <EvilIcons
                 name="camera"
                 size={25}
-                color={'#4b4544'}
+                color={black}
                 onPress={handleChoosePhoto}
               />
             </View>

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,14 +17,14 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   logoTextL: {
-    color: '#F4B5A4',
+    color: lightCamel,
     fontWeight: '400',
     fontSize: 33.91,
     marginTop: -19,
     letterSpacing: 14,
   },
   logoTextU: {
-    color: '#F4B5A4',
+    color: lightCamel,
     fontWeight: '600',
     fontSize: 58.85,
     marginTop: -15,

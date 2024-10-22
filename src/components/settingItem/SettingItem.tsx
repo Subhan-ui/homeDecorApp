@@ -3,6 +3,7 @@ import React from 'react';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {styles} from './SettingItemStyle';
+import { darkBrown } from '../../constants/colors';
 
 const SettingItem = ({
   text,
@@ -19,7 +20,7 @@ const SettingItem = ({
         <View style={styles.textWrap}>{children}</View>
         <Text style={styles.text}>{text}</Text>
       </View>
-      <AntDesign name="down" size={13} color="#363130" />
+      <AntDesign name="down" size={13} color={darkBrown} />
     </Pressable>
   );
 };

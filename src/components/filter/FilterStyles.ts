@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { lightCamel, peach } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   scroll: {marginTop: 20, height: 30},
@@ -7,8 +8,8 @@ export const styles = StyleSheet.create({
   text: {
     fontWeight: '400',
     fontSize: 16,
-    color: '#dcbeb6',
+    color: peach,
     marginHorizontal: 30,
   },
-  line: {borderWidth: 0.5, borderColor: '#f4b5a4', height: 20},
+  line: {borderWidth: 0.5, borderColor: lightCamel, height: 20},
 });

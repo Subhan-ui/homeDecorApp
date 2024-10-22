@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Rating } from '../../types/types';
+import { linen } from '../../constants/colors';
 
 const data:{label: Rating, value: Rating,}[] = [
   {label: 'WORST', value: 'WORST'},
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     paddingHorizontal: 21,
     paddingVertical: 13,
-    backgroundColor: '#FAF0E6',
+    backgroundColor: linen,
   },
   icon: {
     marginRight: 5,

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { black, darkBrown } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrapImg: {width: '100%', alignItems: 'center', marginTop: -4},
@@ -6,8 +7,8 @@ export const styles = StyleSheet.create({
   name: {
     fontWeight: '700',
     fontSize: 20,
-    color: '#363130',
+    color: darkBrown,
     marginTop: 8,
   },
-  id: {fontWeight: '600', fontSize: 13, color: '#4b4544'},
+  id: {fontWeight: '600', fontSize: 13, color: black},
 });

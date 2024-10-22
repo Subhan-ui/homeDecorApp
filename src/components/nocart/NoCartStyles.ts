@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { black } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height - 276;
 
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
   text: {
     fontWeight: '600',
     fontSize: 20,
-    color: '#4b4544',
+    color: black,
     marginTop: 27,
     width: 202,
     textAlign: 'center',

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 26,
   },
   text: {
-    color: '#F4B5A4',
+    color: lightCamel,
     fontWeight: '600',
     fontSize: 20,
     textAlign: 'center',

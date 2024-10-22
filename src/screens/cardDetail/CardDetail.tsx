@@ -10,6 +10,7 @@ import {navigatorTypes} from '../../types/types';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {useCardDetail} from './useCardDetail';
 import ReviewModal from '../../components/reviewModal/ReviewModal';
+import {lightCamel} from '../../constants/colors';
 
 type CardDetailRouteProp = RouteProp<navigatorTypes, 'CardDetail'>;
 
@@ -23,7 +24,7 @@ const CardDetail = () => {
     setIsVisible,
     changeValues,
     data,
-    addReview
+    addReview,
   } = useCardDetail();
   const {name, description, price, picture, id} = route.params;
   console.log(isVisible);
@@ -36,7 +37,7 @@ const CardDetail = () => {
           comment={data.comment}
           rating={data.rating}
           onChange={changeValues}
-          addReview={()=>addReview(id)}
+          addReview={() => addReview(id)}
         />
         <Image source={{uri: picture}} style={styles.img} />
         <View style={styles.mt}>
@@ -58,7 +59,7 @@ const CardDetail = () => {
               <Entypo
                 name="circle-with-plus"
                 size={23}
-                color="#F4B5A4"
+                color={lightCamel}
                 style={{position: 'relative', top: 1}}
                 onPress={() => setIsVisible(true)}
               />

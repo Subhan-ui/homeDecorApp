@@ -3,6 +3,7 @@ import DatePicker from 'react-native-date-picker';
 import {Pressable, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './DateInputStyles';
+import { linen } from '../../../constants/colors';
 
 const DateInput = ({
   color,
@@ -21,7 +22,7 @@ const DateInput = ({
       <Text style={styles.text}>Date Of Birth</Text>
       <Pressable
         onPress={() => setShow(true)}
-        style={[styles.btn, {backgroundColor: color ? 'white' : '#FAF0E6'}]}>
+        style={[styles.btn, {backgroundColor: color ? 'white' : linen}]}>
         <Text style={styles.placeholder}>{value.toDateString()}</Text>
       </Pressable>
       <DatePicker

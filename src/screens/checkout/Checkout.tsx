@@ -7,6 +7,7 @@ import {styles} from './CheckoutStyles';
 import Button from '../../components/molecules/button/Button';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useCheckout} from './useCheckout';
+import { lightCamel } from '../../constants/colors';
 
 const radios = [
   {id: 1, label: 'Cash on Delivery'},
@@ -35,7 +36,7 @@ const Checkout = () => {
           <MaterialCommunityIcons
             name="circle-edit-outline"
             size={23}
-            color={'#F4B5A4'}
+            color={lightCamel}
             onPress={() => navigation.navigate('Address')}
           />
         </View>
@@ -50,7 +51,7 @@ const Checkout = () => {
             <MaterialCommunityIcons
               name="circle-edit-outline"
               size={23}
-              color={'#F4B5A4'}
+              color={lightCamel}
               onPress={() => navigation.navigate('Cart')}
             />
           </View>

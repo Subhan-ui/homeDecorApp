@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
+import { darkCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   text: {
     fontWeight: '500',
     fontSize: 15,
-    color: '#cc7861',
+    color: darkCamel,
     marginTop: 20,
   },
   wrap: {

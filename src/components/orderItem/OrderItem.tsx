@@ -2,6 +2,7 @@ import {Image, Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './OrderItemStyles';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import { lightCamel } from '../../constants/colors';
 
 const OrderItem = ({
   status,
@@ -70,7 +71,7 @@ const OrderItem = ({
                 <EvilIcons
                   name="trash"
                   size={14}
-                  color="#f4b5a4"
+                  color={lightCamel}
                   onPress={handleConfirm}
                 />
               </View>

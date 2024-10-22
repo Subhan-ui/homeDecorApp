@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Octicons from 'react-native-vector-icons/Octicons';
 import useTypeNavigation from '../../../navigation/useTypeNavigation';
 import {styles} from './NavbarStyles';
+import { lightCamel } from '../../../constants/colors';
 
 const Navbar = () => {
   const navigation = useTypeNavigation();
@@ -14,31 +15,31 @@ const Navbar = () => {
       <Icon
         name="home-outline"
         size={23}
-        color="#F4B5A4"
+        color={lightCamel}
         onPress={() => navigation.navigate('Home')}
       />
       <Icon
         name="list-outline"
         size={23}
-        color="#F4B5A4"
+        color={lightCamel}
         onPress={() => navigation.navigate('ItemsPage')}
       />
       <EvilIcons
         name="cart"
         size={27}
-        color="#F4B5A4"
+        color={lightCamel}
         onPress={() => navigation.navigate('Cart')}
       />
       <MaterialCommunityIcons
         name="heart-box"
         size={26}
-        color="#F4B5A4"
+        color={lightCamel}
         onPress={() => navigation.navigate('Wishlist')}
       />
       <Octicons
         name="person"
         size={23}
-        color="#F4B5A4"
+        color={lightCamel}
         onPress={() => navigation.navigate('Profile')}
       />
     </View>

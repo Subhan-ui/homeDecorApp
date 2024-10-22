@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { darkBrown } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {
@@ -7,7 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  title: {fontWeight: '500', fontSize: 15, color: '#363130'},
+  title: {fontWeight: '500', fontSize: 15, color: darkBrown},
   inputWrap: {width: '100%', position: 'relative'},
   input: {
     width: '100%',

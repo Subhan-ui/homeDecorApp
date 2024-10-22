@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { darkBrown, darkCamel } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
@@ -6,19 +7,19 @@ export const styles = StyleSheet.create({
   welcome: {
     fontWeight: '600',
     fontSize: 20,
-    color: '#363130',
+    color: darkBrown,
     marginTop: 45,
   },
   p: {
     fontWeight: '400',
     fontSize: 14,
-    color: '#363130',
+    color: darkBrown,
     marginTop: 10,
   },
   forgotPass: {
     fontWeight: '600',
     fontSize: 14,
-    color: '#363130',
+    color: darkBrown,
     marginTop: 18,
     textAlign: 'center',
   },
@@ -44,6 +45,6 @@ export const styles = StyleSheet.create({
     fontWeight: '300',
     fontSize: 13,
     textAlign: 'center',
-    color: '#CC7861',
+    color: darkCamel,
   },
 });

@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import { darkCamel, darkGrey, lightCamel } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
   line: {
     width: '100%',
     borderWidth: 0.5,
-    borderColor: '#F4B5A4',
+    borderColor: lightCamel,
     height: 1,
   },
   wrap: {
@@ -20,12 +21,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 22,
   },
-  h1: {fontWeight: '500', fontSize: 15, color: '#391713'},
-  p: {fontWeight: '400', fontSize: 14, color: '#cc7861'},
+  h1: {fontWeight: '500', fontSize: 15, color: darkGrey},
+  p: {fontWeight: '400', fontSize: 14, color: darkCamel},
   line2: {
     width: '100%',
     borderBottomWidth: 1,
-    borderBottomColor: '#F4B5A4',
+    borderBottomColor: lightCamel,
     borderStyle: 'dashed',
     marginTop: 21,
     height: 12,
@@ -35,6 +36,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 18,
   },
-  h2: {fontWeight: '600', fontSize: 20, color: '#391713'},
-  p2: {fontWeight: '500', fontSize: 15, color: '#cc7861'},
+  h2: {fontWeight: '600', fontSize: 20, color: darkGrey},
+  p2: {fontWeight: '500', fontSize: 15, color: darkCamel},
 });

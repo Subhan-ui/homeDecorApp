@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { black } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
     marginTop: 36,
     marginBottom: 20,
   },
-  text: {fontWeight: '400', fontSize: 14, color: '#4b4544'},
+  text: {fontWeight: '400', fontSize: 14, color: black},
   textWrap: {
     width: '100%', 
     height: '100%',

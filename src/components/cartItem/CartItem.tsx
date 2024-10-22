@@ -3,6 +3,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Entypo';
 import {styles} from './CartItemStyles';
 import {useCartItem} from './useCartItem';
+import { darkCamel } from '../../constants/colors';
 
 const CartItem = ({
   picture,
@@ -35,7 +36,7 @@ const CartItem = ({
             <Icon
               name="minus"
               size={12}
-              color="#cc7861"
+              color={darkCamel}
               style={styles.minus}
               onPress={() => removeSingleItem(itemId)}
             />
@@ -43,7 +44,7 @@ const CartItem = ({
             <Icon
               name="plus"
               size={12}
-              color="#cc7861"
+              color={darkCamel}
               style={styles.minus}
               onPress={() => addSingleItem(id)}
             />

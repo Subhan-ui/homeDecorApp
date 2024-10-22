@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   gridItem: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
     margin: 6,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f4b5a4',
+    backgroundColor: lightCamel,
     borderRadius: 10,
   },
   title: {

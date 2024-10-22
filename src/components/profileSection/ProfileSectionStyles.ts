@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { black, lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 81,
     marginTop: 13,
-    backgroundColor: '#F4B5A4',
+    backgroundColor: lightCamel,
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 31,
@@ -20,7 +21,7 @@ export const styles = StyleSheet.create({
   btnText: {
     fontWeight: '400',
     fontSize: 13,
-    color: '#4B4544',
+    color: black,
     marginTop: 8,
   },
   line: {width: 1, height: '65%', backgroundColor: 'white'},

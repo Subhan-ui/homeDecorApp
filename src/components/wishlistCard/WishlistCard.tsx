@@ -3,6 +3,7 @@ import React from 'react';
 import {styles} from './WishlistCardStyles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useWishCard} from './useWishCard';
+import { lightCamel } from '../../constants/colors';
 
 const WishlistCard = ({
   id,
@@ -28,7 +29,7 @@ const WishlistCard = ({
                 <MaterialIcons
                   name="delete-outline"
                   size={11}
-                  color="#F4B5A4"
+                  color={lightCamel}
                   onPress={() => removeFav(id)}
                 />
               </View>

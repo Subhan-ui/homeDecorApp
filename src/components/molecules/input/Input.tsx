@@ -1,6 +1,7 @@
 import {Image, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import {styles} from './InputStyles';
+import { linen, peach } from '../../../constants/colors';
 
 const Input = ({
   eye = false,
@@ -29,7 +30,7 @@ const Input = ({
         <TextInput
           value={value}
           onChangeText={text => onChange(text)}
-          style={[styles.input, {backgroundColor: color ? 'white' : '#FAF0E6'}]}
+          style={[styles.input, {backgroundColor: color ? 'white' : linen}]}
           placeholder={placeholder}
           keyboardType={
             title === 'Email'
@@ -38,7 +39,7 @@ const Input = ({
               ? 'phone-pad'
               : 'default'
           }
-          placeholderTextColor="#DCBEB6"
+          placeholderTextColor={peach}
           secureTextEntry={eye}
         />
         {eye && (

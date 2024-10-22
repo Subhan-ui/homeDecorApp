@@ -1,16 +1,17 @@
 import {StyleSheet} from 'react-native';
+import { black, darkCamel, lightCamel } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   heading: {
     fontWeight: '500',
     fontSize: 15,
-    color: '#cc7861',
+    color: darkCamel,
     marginTop: 13,
   },
   box: {
     height: 132,
     borderRadius: 12,
-    backgroundColor: '#f4b5a4',
+    backgroundColor: lightCamel,
     marginTop: 39,
     display: 'flex',
     flexDirection: 'row',
@@ -19,13 +20,13 @@ export const styles = StyleSheet.create({
   h2: {
     fontWeight: '500',
     fontSize: 15,
-    color: '#4b4544',
+    color: black,
     marginBottom: 8,
   },
   p: {
     fontWeight: '300',
     fontSize: 13,
-    color: '#4b4544',
+    color: black,
     marginBottom: 15,
   },
   btnWrap: {
@@ -41,6 +42,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 6.33,
     backgroundColor: 'white',
   },
-  btnText: {fontSize: 8, fontWeight: '400', color: '#4b4544'},
+  btnText: {fontSize: 8, fontWeight: '400', color: black},
   img: {position: 'absolute', bottom: 4},
 });

@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { black, darkCamel } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -14,14 +15,14 @@ export const styles = StyleSheet.create({
   h1: {
     fontWeight: '600',
     fontSize: 20,
-    color: '#cc7861',
+    color: darkCamel,
     textAlign: 'center',
     width: 194,
   },
   h2: {
     fontWeight: '500',
     fontSize: 15,
-    color: '#4b4544',
+    color: black,
     textAlign: 'center',
     width: 277,
   },

@@ -1,6 +1,7 @@
 import {Pressable, Text, View} from 'react-native';
 import React from 'react';
 import {styles} from './ButtonStyles';
+import { darkCamel, lightCamel, linen, peach } from '../../../constants/colors';
 
 const Button = ({
   text,
@@ -15,8 +16,8 @@ const Button = ({
   marginBottom?: number;
   color?: boolean;
 }) => {
-  const backgroundColor = color ? '#FAF0E6' : '#F4B5A4';
-  const textColor = color ? '#DCBEB6' : '#CC7861';
+  const backgroundColor = color ? linen : lightCamel;
+  const textColor = color ? peach : darkCamel;
   return (
     <View style={[styles.wrap, {marginBottom}]}>
       <Pressable

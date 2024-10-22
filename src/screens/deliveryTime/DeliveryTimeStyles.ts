@@ -1,21 +1,22 @@
 import {StyleSheet} from 'react-native';
+import { darkBrown, darkCamel, darkGrey, lightCamel, linen, pink } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   stSectionWrap: {width: '100%', gap: 11},
   text: {
     fontWeight: '500',
     fontSize: 15,
-    color: '#cc7861',
+    color: darkCamel,
   },
   subText: {
     fontWeight: '400',
     fontSize: 14,
-    color: '#363130',
+    color: darkBrown,
   },
   stBox: {
     height: 99,
     width: '100%',
-    backgroundColor: '#faf0e6',
+    backgroundColor: linen,
     borderRadius: 13,
     paddingTop: 19,
     paddingLeft: 24,
@@ -33,13 +34,13 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
     marginBottom: 13,
   },
-  h1: {fontWeight: '600', fontSize: 20, color: '#cc7861'},
-  h2: {fontWeight: '500', fontSize: 15, color: '#391713'},
-  h3: {fontWeight: '500', fontSize: 15, color: '#f4b5a4'},
+  h1: {fontWeight: '600', fontSize: 20, color: darkCamel},
+  h2: {fontWeight: '500', fontSize: 15, color: darkGrey},
+  h3: {fontWeight: '500', fontSize: 15, color: lightCamel},
   line: {
     width: '100%',
     borderWidth: 1,
-    borderColor: '#ffd8c7',
+    borderColor: pink,
     marginBottom: 24,
   },
   trackingWrap: {flexDirection: 'row', gap: 8.8},
@@ -55,7 +56,7 @@ export const styles = StyleSheet.create({
     width: 226,
     fontWeight: '300',
     fontSize: 13,
-    color: '#391713',
+    color: darkGrey,
   },
-  time: {color: '#F4B5A4', fontWeight: '400', fontSize: 14},
+  time: {color: lightCamel, fontWeight: '400', fontSize: 14},
 });

@@ -1,15 +1,16 @@
-import { Dimensions, StyleSheet } from "react-native";
+import {Dimensions, StyleSheet} from 'react-native';
+import {darkBrown, lightestCamel} from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
-export const styles= StyleSheet.create({
-    wholeWrap: {
-        height: screenHeight,
-        width: screenWidth,
-        backgroundColor: '#f4b5a436',
-        zIndex: 0,
-      },
-wrap: {
+export const styles = StyleSheet.create({
+  wholeWrap: {
+    height: screenHeight,
+    width: screenWidth,
+    backgroundColor: lightestCamel,
+    zIndex: 0,
+  },
+  wrap: {
     height: 216,
     width: '100%',
     borderTopLeftRadius: 20,
@@ -21,7 +22,7 @@ wrap: {
   h1: {
     fontWeight: '400',
     fontSize: 17,
-    color: '#363130',
+    color: darkBrown,
     marginTop: 33,
     textAlign: 'center',
   },
@@ -39,5 +40,5 @@ wrap: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  btnText: {fontWeight: '600', fontSize: 20,}
-})
+  btnText: {fontWeight: '600', fontSize: 20},
+});

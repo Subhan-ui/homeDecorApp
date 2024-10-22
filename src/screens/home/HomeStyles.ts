@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import { darkBrown, darkCamel, darkPink, lightCamel } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -12,8 +13,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 33,
   },
-  h1: {fontWeight: '600', fontSize: 20, color: '#f485a4'},
-  p: {fontWeight: '400', fontSize: 14, color: '#363130'},
+  h1: {fontWeight: '600', fontSize: 20, color: darkPink},
+  p: {fontWeight: '400', fontSize: 14, color: darkBrown},
   mt: {marginTop: 20},
   scrollWrap: {
     display: 'flex',
@@ -26,19 +27,19 @@ export const styles = StyleSheet.create({
   activeBar: {
     height: 4,
     width: 20,
-    backgroundColor: '#363130',
+    backgroundColor: darkBrown,
     borderRadius: 12,
   },
   unactive: {
     height: 4,
     width: 20,
-    backgroundColor: '#F4B5A4',
+    backgroundColor: lightCamel,
     borderRadius: 12,
   },
   heading: {
     fontWeight: '600',
     fontSize: 15,
-    color: '#cc7861',
+    color: darkCamel,
     marginVertical: 20,
   },
 });

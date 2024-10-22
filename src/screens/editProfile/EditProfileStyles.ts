@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { black, darkBrown, lightCamel, linen } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   imgSection: {width: '100%', alignItems: 'center', marginTop: -4},
@@ -6,17 +7,17 @@ export const styles = StyleSheet.create({
   nameSection: {
     height: 70,
     width: '100%',
-    backgroundColor: '#FAF0E6',
+    backgroundColor: linen,
     marginTop: 23,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  name: {fontSize: 20, fontWeight: '700', color: '#4B4544'},
-  id: {fontSize: 13, fontWeight: '600', color: '#4B4544'},
+  name: {fontSize: 20, fontWeight: '700', color: black},
+  id: {fontSize: 13, fontWeight: '600', color: black},
   genderSectionWrap: {marginTop: 31},
   optionsWrap: {flexDirection: 'row', justifyContent: 'space-between'},
   options: {
-    backgroundColor: '#FAF0E6',
+    backgroundColor: linen,
     height: 49,
     width: '48%',
     flexDirection: 'row',
@@ -29,15 +30,15 @@ export const styles = StyleSheet.create({
     height: 20,
     width: 20,
     borderRadius: 55,
-    borderColor: '#F4B5A4',
+    borderColor: lightCamel,
     borderWidth: 1,
   },
-  optionText: {fontWeight: '500', fontSize: 15, color: '#363130'},
+  optionText: {fontWeight: '500', fontSize: 15, color: darkBrown},
   iconWrap: {
     width: 35,
     height: 35,
     borderRadius: 30,
-    backgroundColor: '#f4b5a4',
+    backgroundColor: lightCamel,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { black, darkGrey, lightCamel } from '../../../constants/colors';
 
 export const styles = StyleSheet.create({
   wrap: {flexDirection: 'row', alignItems: 'center'},
@@ -7,7 +8,7 @@ export const styles = StyleSheet.create({
     height: 20,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: '#F4B5A4',
+    borderColor: lightCamel,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -15,13 +16,13 @@ export const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#F4B5A4',
+    backgroundColor: lightCamel,
   },
   label: {
     marginLeft: 10,
     fontWeight: '400',
     fontSize: 14,
-    color: '#391713',
+    color: darkGrey,
   },
   container: {
     width: 171,
@@ -33,5 +34,5 @@ export const styles = StyleSheet.create({
     marginLeft: 25,
     marginRight: 14,
   },
-  containerText: {fontWeight: '400', fontSize: 14, color: '#4b4544'},
+  containerText: {fontWeight: '400', fontSize: 14, color: black},
 });
