@@ -1,15 +1,18 @@
-import {Image, Text, View} from 'react-native';
-import React from 'react';
+import {Image, Pressable, Text, View} from 'react-native';
+import React, {useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 
 import useTypeNavigation from '../../../navigation/useTypeNavigation';
 import {styles} from './HeaderItemStyles';
 import {headerItemType} from '../../../types/types';
+import SearchModal from '../../searchModal/SearchModal';
 
 const HeaderItem = ({text, wishlist = false}: headerItemType) => {
   const navigation = useTypeNavigation();
+  const [visible, setVisible] = useState(false);
   return (
     <View style={styles.wrap}>
+      <SearchModal visible={visible} close={() => setVisible(false)} />
       <Feather
         name="arrow-left"
         size={24}
@@ -24,7 +27,9 @@ const HeaderItem = ({text, wishlist = false}: headerItemType) => {
           <Image source={require('../../../assets/icons/add.png')} />
         </View>
       ) : wishlist === false ? (
-        <Image source={require('../../../assets/icons/search.png')} />
+        <Pressable onPress={()=>setVisible(true)}>
+          <Image source={require('../../../assets/icons/search.png')} />
+        </Pressable>
       ) : (
         <Image
           source={require('../../../assets/icons/eye.png')}

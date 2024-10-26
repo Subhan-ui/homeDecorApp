@@ -6,12 +6,8 @@ import Navbar from '../molecules/navbar/Navbar';
 import {styles} from './ComponentWrapperViewStyles';
 import {componentWrapperViewType} from '../../types/types';
 
-const ComponentWrapperView = ({
-  children,
-  text,
-  filter = true,
-  navbar = true,
-}: componentWrapperViewType) => {
+const ComponentWrapperView = (props: componentWrapperViewType) => {
+  const {children, text, filter = true, navbar = true} = props;
   return (
     <>
       <View style={styles.fullH}>

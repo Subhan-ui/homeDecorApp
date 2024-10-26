@@ -6,14 +6,8 @@ import Button from '../molecules/button/Button';
 import {reviewModalType} from '../../types/types';
 import {styles} from './ReviewModalStyles';
 
-const ReviewModal = ({
-  isVisible,
-  close,
-  comment,
-  rating,
-  onChange,
-  addReview,
-}: reviewModalType) => {
+const ReviewModal = (props: reviewModalType) => {
+  const {isVisible, close, comment, rating, onChange, addReview} = props;
   return (
     <Modal
       presentationStyle="overFullScreen"

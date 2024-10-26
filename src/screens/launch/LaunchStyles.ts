@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 30.88,
   },
-  btnWrap: {width: '100%', display: 'flex', alignItems: 'center', gap: 7},
+  btnWrap: {width: '80%', display: 'flex', alignItems: 'center', gap: 7},
   btn: {
     paddingVertical: 11,
     width: '70%',

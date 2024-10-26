@@ -24,11 +24,15 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
   const login = async (data: loginType, empty: () => void) => {
     try {
       const response = await dispatch(loginUser(data)).unwrap();
-      if (typeof response.token === 'string') {
-        await AsyncStorage.setItem('authToken', response.token);
+      if (
+        typeof response.accessToken === 'string' &&
+        typeof response.refreshToken === 'string'
+      ) {
+        await AsyncStorage.setItem('authToken', response.accessToken);
+        await AsyncStorage.setItem('refreshToken', response.refreshToken);
         setIsLogin(true);
         ToastAndroid.show(
-          `${user.user?.email} logged in successfully`,
+          `${response.user.name} logged in successfully`,
           ToastAndroid.SHORT,
         );
       } else {

@@ -22,6 +22,7 @@ import {
   VerifyEmail,
   Settings,
   Address,
+  Boarding,
 } from '../../screens';
 import {navigation} from '../../types/types';
 
@@ -120,12 +121,17 @@ export const navigationLogged: navigation = [
 
 export const navigationSignUp: navigation = [
   {
-    id: 1,
+    id: 2,
+    name: 'Launch',
+    Component: Launch,
+  },
+  {
+    id: 6,
     name: 'Login',
     Component: Login,
   },
   {
-    id: 2,
+    id: 7,
     name: 'Signup',
     Component: Signup,
   },
@@ -143,5 +149,10 @@ export const navigationSignUp: navigation = [
     id: 5,
     name: 'VerifyEmail',
     Component: VerifyEmail,
+  },
+  {
+    id: 1,
+    name: 'Boarding',
+    Component: Boarding,
   },
 ];

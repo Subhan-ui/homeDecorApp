@@ -31,7 +31,11 @@ export const VERIFY_EMAIL = gql`
 export const LOGIN_USER = gql`
   mutation LOGIN_USER($email: String!, $password: String!) {
     login(email: $email, password: $password) {
-      token
+      accessToken
+      refreshToken
+      user {
+        name
+      }
     }
   }
 `;
@@ -348,6 +352,27 @@ export const WHOLE_DATA = gql`
           }
         }
       }
+    }
+  }
+`;
+
+export const SEARCH = gql`
+  query SEARCH($text: String!) {
+    searchItems(term: $text) {
+      name
+      id
+      description
+      price
+      picture
+      category {
+        name
+        id
+      }
+      subCategory {
+        name
+        id
+      }
+      createdAt
     }
   }
 `;

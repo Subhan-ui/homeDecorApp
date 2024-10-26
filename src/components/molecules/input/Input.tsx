@@ -4,15 +4,16 @@ import {styles} from './InputStyles';
 import {linen, peach} from '../../../constants/colors';
 import {inputType} from '../../../types/types';
 
-const Input = ({
-  eye = false,
-  title,
-  placeholder,
-  marginTop,
-  color = false,
-  value,
-  onChange,
-}: inputType) => {
+const Input = (props: inputType) => {
+  const {
+    eye = false,
+    title,
+    placeholder,
+    marginTop,
+    color = false,
+    value,
+    onChange,
+  } = props;
   return (
     <View style={[styles.wrap, {marginTop}]}>
       <View style={{width: '92%'}}>

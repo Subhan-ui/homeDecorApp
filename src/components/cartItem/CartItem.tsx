@@ -6,14 +6,8 @@ import {useCartItem} from './useCartItem';
 import {darkCamel} from '../../constants/colors';
 import {cartItemType} from '../../types/types';
 
-const CartItem = ({
-  picture,
-  id,
-  name,
-  price,
-  quantity,
-  itemId,
-}: cartItemType) => {
+const CartItem = (props: cartItemType) => {
+  const {picture, id, name, price, quantity, itemId} = props;
   const {addSingleItem, removeSingleItem} = useCartItem();
   return (
     <>

@@ -2,17 +2,30 @@ import {ApolloClient, createHttpLink, InMemoryCache} from '@apollo/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {setContext} from '@apollo/client/link/context';
+import {isAccessTokenExpired, refreshTokenAction} from '../lib/refreshToken';
 
 const httpLink = createHttpLink({
-  uri: 'http://192.168.100.4:4000/graphql',
+  uri: 'https://home-decor-production.up.railway.app/graphql',
 });
 
 const authLink = setContext(async (_, {headers}) => {
-  const token = await AsyncStorage.getItem('authToken');
+  let accessToken = await AsyncStorage.getItem('authToken');
+  const refreshToken = await AsyncStorage.getItem('refreshToken');
+
+  if (accessToken && refreshToken && isAccessTokenExpired(accessToken)) {
+    const newTokens = await refreshTokenAction(refreshToken);
+
+    if (newTokens) {
+      accessToken = newTokens.accessToken;
+    } else {
+      console.log('Failed to refresh token');
+    }
+  }
+
   return {
     headers: {
       ...headers,
-      authorization: token ? token : '',
+      authorization: accessToken ? `${accessToken}` : '',
     },
   };
 });

@@ -7,6 +7,7 @@ export type navigatorTypes = {
     picture: string;
     id: string;
   };
+  Splash: undefined;
   Cart: undefined;
   Category: undefined;
   Checkout: undefined;
@@ -28,6 +29,7 @@ export type navigatorTypes = {
   VerifyEmail: undefined;
   Settings: undefined;
   Address: undefined;
+  Boarding: undefined;
 };
 
 export type userDataType = {
@@ -169,6 +171,7 @@ export type itemsType = {
     id: string;
     name: string;
   };
+  createdAt: number;
 };
 
 export type itemState = {

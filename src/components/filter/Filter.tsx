@@ -4,14 +4,12 @@ import React from 'react';
 import {styles} from './FilterStyles';
 
 const items = [
-  {id: 1, name: 'Living Room'},
-  {id: 2, name: 'Bed'},
-  {id: 3, name: 'Bed Room'},
-  {id: 4, name: 'Sofa'},
-  {id: 5, name: 'Table'},
-  {id: 6, name: 'Chair'},
-  {id: 7, name: 'Lights'},
-  {id: 8, name: 'Decor'},
+  {id: 6, name: 'All'},
+  {id: 1, name: 'Bed Room'},
+  {id: 2, name: 'Living Room'},
+  {id: 3, name: 'Kitchen'},
+  {id: 4, name: 'Office'},
+  {id: 5, name: 'Dinning Room'},
 ];
 
 const Filter = () => {

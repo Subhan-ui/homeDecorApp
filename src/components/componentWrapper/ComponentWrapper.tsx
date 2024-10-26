@@ -6,13 +6,8 @@ import Navbar from '../molecules/navbar/Navbar';
 import {styles} from './ComponentWrapperStyles';
 import {componentWrapperType} from '../../types/types';
 
-const ComponentWrapper = ({
-  children,
-  text,
-  filter = true,
-  wishlist = false,
-  refresh,
-}: componentWrapperType) => {
+const ComponentWrapper = (props: componentWrapperType) => {
+  const {children, text, filter = true, wishlist = false, refresh} = props;
   return (
     <>
       <View style={styles.wrap}>
