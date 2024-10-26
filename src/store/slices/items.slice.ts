@@ -2,7 +2,12 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 
 import {itemState} from '../../types/types';
 import client from '../../graphql/client';
-import {GET_ITEMS, GET_NEW_COLLECTION, SEARCH} from '../../graphql/query';
+import {
+  GET_ITEMS,
+  GET_NEW_COLLECTION,
+  GET_POPULAR,
+  SEARCH,
+} from '../../graphql/query';
 
 const initialState: itemState = {
   items: null,
@@ -57,6 +62,21 @@ export const getNew = createAsyncThunk(
   },
 );
 
+export const getPopular = createAsyncThunk(
+  '/items/popular',
+  async (_, {rejectWithValue}) => {
+    try {
+      const response = await client.query({
+        query: GET_POPULAR,
+      });
+      // console.log('data->>>>    ',response?.data?.popularItems?.payload)
+      return response?.data?.popularItems;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Get popular items failed');
+    }
+  },
+);
+
 const itemSlice = createSlice({
   name: 'items',
   initialState,
@@ -93,6 +113,18 @@ const itemSlice = createSlice({
         state.status = 'succeeded';
       })
       .addCase(searchItems.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(getPopular.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(getPopular.fulfilled, (state, action) => {
+        state.popular = action.payload;
+        state.status = 'succeeded';
+      })
+      .addCase(getPopular.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       })

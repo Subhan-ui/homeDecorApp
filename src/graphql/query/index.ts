@@ -397,6 +397,26 @@ export const GET_NEW_COLLECTION = gql`
     }
   }
 `;
+export const GET_POPULAR = gql`
+  query GET_POPULAR {
+    popularItems {
+      name
+      id
+      description
+      price
+      picture
+      category {
+        name
+        id
+      }
+      subCategory {
+        name
+        id
+      }
+      createdAt
+    }
+  }
+`;
 
 export const GET_REVIEWS = gql`
   query GET_REVIEWS($id: String!) {

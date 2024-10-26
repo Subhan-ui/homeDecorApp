@@ -10,6 +10,7 @@ import {styles} from './HomeStyles';
 import {useAppDispatch} from '../../store/hook';
 import {getItems, getNew} from '../../store/slices/items.slice';
 import {getUserData} from '../../store/slices/auth.slice';
+import Offers from '../../components/offers/Offers';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -31,14 +32,7 @@ const Home = () => {
           </View>
           <Image source={require('../../assets/icons/search.png')} />
         </View>
-        <View style={styles.mt}>
-          <Image source={require('../../assets/icons/home.png')} />
-          <View style={styles.scrollWrap}>
-            <View style={styles.activeBar} />
-            <View style={styles.unactive} />
-            <View style={styles.unactive} />
-          </View>
-        </View>
+        <Offers />
         <View>
           <Text style={styles.heading}>Categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>

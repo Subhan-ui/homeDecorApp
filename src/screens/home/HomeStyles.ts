@@ -3,7 +3,6 @@ import {
   darkBrown,
   darkCamel,
   darkPink,
-  lightCamel,
 } from '../../constants/colors';
 
 const screenHeight = Dimensions.get('window').height;
@@ -20,27 +19,6 @@ export const styles = StyleSheet.create({
   },
   h1: {fontWeight: '600', fontSize: 20, color: darkPink},
   p: {fontWeight: '400', fontSize: 14, color: darkBrown},
-  mt: {marginTop: 20},
-  scrollWrap: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 4,
-    marginTop: 20,
-  },
-  activeBar: {
-    height: 4,
-    width: 20,
-    backgroundColor: darkBrown,
-    borderRadius: 12,
-  },
-  unactive: {
-    height: 4,
-    width: 20,
-    backgroundColor: lightCamel,
-    borderRadius: 12,
-  },
   heading: {
     fontWeight: '600',
     fontSize: 15,
