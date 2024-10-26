@@ -15,7 +15,7 @@ export type navigatorTypes = {
   EditProfile: undefined;
   FailurePayment: undefined;
   ForgotPassword: undefined;
-  ItemsPage: undefined;
+  ItemsPage: undefined | {name: string; items: itemsType[]};
   Launch: undefined;
   Login: undefined;
   Order: undefined;
@@ -179,6 +179,8 @@ export type itemState = {
   status: status;
   error: string | null;
   topItems: itemsType[] | null;
+  newCollection: itemsType[] | null;
+  popular: itemsType[] | null;
 };
 
 export type favouriteType = {

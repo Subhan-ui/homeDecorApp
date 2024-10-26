@@ -2,13 +2,16 @@ import {Text, View} from 'react-native';
 
 import Card from '../card/Card';
 import {styles} from './NewCollectionStyles';
-import {useAppSelector} from '../../store/hook';
+import { useNewCollection } from './useNewCollection';
 
 const NewCollection = () => {
-  const items = useAppSelector(state => state.items.topItems);
+  const {items, gotoAll} = useNewCollection()
   return (
     <View>
-      <Text style={styles.text}>New Collection</Text>
+      <View style={styles.textWrap}>
+        <Text style={styles.text}>New Collection</Text>
+        <Text style={styles.textU} onPress={gotoAll}>View All</Text>
+      </View>
       <View style={styles.wrap}>
         {items?.map(item => (
           <Card

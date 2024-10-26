@@ -2,16 +2,31 @@ import {useEffect, useState} from 'react';
 
 import {useAppDispatch, useAppSelector} from '../../store/hook';
 import {getItems} from '../../store/slices/items.slice';
+import {RouteProp, useRoute} from '@react-navigation/native';
+import {itemsType, navigatorTypes} from '../../types/types';
+
+type CardDetailRouteProp = RouteProp<navigatorTypes, 'ItemsPage'>;
 
 export const setItemsPage = () => {
   const dispatch = useAppDispatch();
+  const route = useRoute<CardDetailRouteProp>();
+  const parameters = route.params;
   const states = useAppSelector(state => state.items);
+  const [items, setItems] = useState<itemsType[]>([]);
+  const [name, setName] = useState<string>('');
   const [data, setData] = useState<string>('Loading...');
   const [ok, setOk] = useState(false);
   useEffect(() => {
     (async () => {
       (await dispatch(getItems())).payload;
     })();
+    if (parameters) {
+      setItems(parameters.items);
+      setName(parameters.name);
+    } else if (states.items) {
+      setItems(states.items);
+      setName('Items');
+    }
   }, []);
   useEffect(() => {
     checkTrue();
@@ -33,5 +48,5 @@ export const setItemsPage = () => {
       setData('Loading...');
     }
   };
-  return {ok, data, items: states.items};
+  return {ok, data, items, name};
 };

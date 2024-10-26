@@ -8,7 +8,7 @@ import NewCollection from '../../components/newCollection/NewCollection';
 import Navbar from '../../components/molecules/navbar/Navbar';
 import {styles} from './HomeStyles';
 import {useAppDispatch} from '../../store/hook';
-import {getItems} from '../../store/slices/items.slice';
+import {getItems, getNew} from '../../store/slices/items.slice';
 import {getUserData} from '../../store/slices/auth.slice';
 
 const Home = () => {

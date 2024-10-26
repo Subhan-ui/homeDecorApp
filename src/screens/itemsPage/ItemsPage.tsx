@@ -6,9 +6,9 @@ import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper
 import {setItemsPage} from './setItemsPage';
 
 const ItemsPage = () => {
-  const {items, ok, data} = setItemsPage();
+  const {items, ok, data, name} = setItemsPage();
   return (
-    <ComponentWrapper text="Special Offers">
+    <ComponentWrapper text={name}>
       {ok ? (
         <>
           {items?.map(item => (

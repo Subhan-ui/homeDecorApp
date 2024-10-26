@@ -377,6 +377,27 @@ export const SEARCH = gql`
   }
 `;
 
+export const GET_NEW_COLLECTION = gql`
+  query GET_NEW_COLLECTION {
+    newCollection {
+      name
+      id
+      description
+      price
+      picture
+      category {
+        name
+        id
+      }
+      subCategory {
+        name
+        id
+      }
+      createdAt
+    }
+  }
+`;
+
 export const GET_REVIEWS = gql`
   query GET_REVIEWS($id: String!) {
     getReviews(productId: $id) {

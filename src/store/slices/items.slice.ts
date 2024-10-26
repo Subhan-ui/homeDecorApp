@@ -2,13 +2,15 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 
 import {itemState} from '../../types/types';
 import client from '../../graphql/client';
-import {GET_ITEMS, SEARCH} from '../../graphql/query';
+import {GET_ITEMS, GET_NEW_COLLECTION, SEARCH} from '../../graphql/query';
 
 const initialState: itemState = {
   items: null,
   status: 'idle',
   error: null,
   topItems: null,
+  newCollection: null,
+  popular: null,
 };
 
 export const getItems = createAsyncThunk(
@@ -41,6 +43,20 @@ export const searchItems = createAsyncThunk(
   },
 );
 
+export const getNew = createAsyncThunk(
+  'items/new',
+  async (_, {rejectWithValue}) => {
+    try {
+      const response = await client.query({
+        query: GET_NEW_COLLECTION,
+      });
+      return response?.data?.newCollection;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Get new collection failed');
+    }
+  },
+);
+
 const itemSlice = createSlice({
   name: 'items',
   initialState,
@@ -60,21 +76,9 @@ const itemSlice = createSlice({
         state.error = null;
       })
       .addCase(getItems.fulfilled, (state, action) => {
-        
         state.items = [...action.payload];
         state.status = 'succeeded';
-      
-        
-        const sortedItems = state.items.sort((a, b) => b.createdAt - a.createdAt);
-      
-        
-        if (sortedItems.length >= 2) {
-          state.topItems = sortedItems.slice(0, 2); 
-        } else {
-          state.topItems = null;
-        }
       })
-      
 
       .addCase(getItems.rejected, (state, action) => {
         state.status = 'failed';
@@ -89,6 +93,23 @@ const itemSlice = createSlice({
         state.status = 'succeeded';
       })
       .addCase(searchItems.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(getNew.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(getNew.fulfilled, (state, action) => {
+        state.newCollection = action.payload;
+        state.status = 'succeeded';
+        if (state.newCollection && state.newCollection.length >= 2) {
+          state.topItems = state.newCollection.slice(0, 2);
+        } else {
+          state.topItems = null;
+        }
+      })
+      .addCase(getNew.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       });
