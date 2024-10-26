@@ -23,7 +23,14 @@ export type navigatorTypes = {
   ResetPassword: undefined;
   Reviews: {id: string};
   Signup: undefined;
-  SubCategory: undefined;
+  SubCategory: {
+    name: string;
+    id: string;
+    data: {
+      name: string;
+      id: string;
+    }[];
+  };
   SuccessPayment: undefined;
   Wishlist: undefined;
   VerifyEmail: undefined;
@@ -181,6 +188,16 @@ export type itemState = {
   topItems: itemsType[] | null;
   newCollection: itemsType[] | null;
   popular: itemsType[] | null;
+  categories: categoryType[] | null;
+};
+
+export type categoryType = {
+  id: string;
+  name: string;
+  subCategories: {
+    id: string;
+    name: string;
+  }[];
 };
 
 export type favouriteType = {
@@ -329,4 +346,11 @@ export type wishlistCardType = {
   price: number;
   picture: string;
 };
-export type gridComponentType = {data: {id: number; name: string}[]};
+export type gridComponentType = {
+  data: categoryType[] | readonly {name: string; id: string}[];
+  onClick: (id: string) => void;
+};
+export type gridSubComponentType = {
+  data: categoryType[] | readonly {name: string; id: string}[];
+  onClick: (categoryId: string, subCategoryId: string) => void;
+};

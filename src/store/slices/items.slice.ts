@@ -3,11 +3,14 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {itemState} from '../../types/types';
 import client from '../../graphql/client';
 import {
+  GET_CATEGORIES,
+  GET_ITEM_CATEGORY_WISE,
   GET_ITEMS,
   GET_NEW_COLLECTION,
   GET_POPULAR,
   SEARCH,
 } from '../../graphql/query';
+import {SubCategory} from '../../screens';
 
 const initialState: itemState = {
   items: null,
@@ -16,6 +19,7 @@ const initialState: itemState = {
   topItems: null,
   newCollection: null,
   popular: null,
+  categories: null,
 };
 
 export const getItems = createAsyncThunk(
@@ -63,16 +67,47 @@ export const getNew = createAsyncThunk(
 );
 
 export const getPopular = createAsyncThunk(
-  '/items/popular',
+  'items/popular',
   async (_, {rejectWithValue}) => {
     try {
       const response = await client.query({
         query: GET_POPULAR,
       });
-      // console.log('data->>>>    ',response?.data?.popularItems?.payload)
       return response?.data?.popularItems;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Get popular items failed');
+    }
+  },
+);
+
+export const getCategories = createAsyncThunk(
+  'items/categories',
+  async (_, {rejectWithValue}) => {
+    try {
+      const response = await client.query({
+        query: GET_CATEGORIES,
+      });
+      return response?.data?.getCategories;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Get categories failed');
+    }
+  },
+);
+
+export const getCategoryWiseItems = createAsyncThunk(
+  'items/categoryWiseItems',
+  async (
+    variables: {categoryId: string; subCategoryId: string},
+    {rejectWithValue},
+  ) => {
+    try {
+      const response = await client.query({
+        query: GET_ITEM_CATEGORY_WISE,
+        variables,
+      });
+      return response?.data?.getSubItems;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Get category wise items failed');
     }
   },
 );
@@ -125,6 +160,30 @@ const itemSlice = createSlice({
         state.status = 'succeeded';
       })
       .addCase(getPopular.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(getCategories.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(getCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
+        state.status = 'succeeded';
+      })
+      .addCase(getCategories.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
+      .addCase(getCategoryWiseItems.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(getCategoryWiseItems.fulfilled, (state, action) => {
+        state.items = action.payload;
+        state.status = 'succeeded';
+      })
+      .addCase(getCategoryWiseItems.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       })

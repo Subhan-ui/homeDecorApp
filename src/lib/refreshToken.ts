@@ -26,7 +26,6 @@ export const refreshTokenAction = async (refreshToken: string) => {
       const tokens = data.data.refreshToken;
       await AsyncStorage.setItem('authToken', tokens.accessToken);
       await AsyncStorage.setItem('refreshToken', tokens.refreshToken);
-      console.log('refreshed')
       return {
         accessToken: tokens.accessToken,
         refreshToken: tokens.refreshToken,

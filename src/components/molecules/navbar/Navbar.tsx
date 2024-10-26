@@ -22,7 +22,7 @@ const Navbar = () => {
         name="list-outline"
         size={23}
         color={lightCamel}
-        onPress={() => navigation.navigate('ItemsPage')}
+        onPress={() => navigation.navigate('Category')}
       />
       <EvilIcons
         name="cart"

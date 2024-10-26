@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useAppDispatch} from '../../store/hook';
 import {ToastAndroid} from 'react-native';
 import {searchItems} from '../../store/slices/items.slice';
+import {toString} from '@react-native-firebase/storage';
 
 export const useSearchModal = (close: () => void) => {
   const [text, setText] = useState<string>('');
@@ -17,11 +18,10 @@ export const useSearchModal = (close: () => void) => {
     }
     try {
       const response = await dispatch(searchItems(some));
-      console.log(response);
       close();
       ToastAndroid.show('Searched successfully', ToastAndroid.SHORT);
-    } catch (error) {
-      console.log(error as string);
+    } catch (error: any) {
+      ToastAndroid.show(error.message as string, ToastAndroid.SHORT);
     } finally {
       setText('');
     }

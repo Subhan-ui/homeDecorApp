@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, Dimensions, Pressable} from 'react-native';
 
-import {styles} from './CategoryButtonStyles';
-import {gridComponentType} from '../../types/types';
+import {styles} from './subCategoryButtonStyles';
+import {gridSubComponentType} from '../../types/types';
 
-const GridComponent = ({data, onClick}: gridComponentType) => {
+const SubGridComponent = ({data, onClick}: gridSubComponentType) => {
   const [height, setHeight] = useState<number>(0);
   const screenHeight = Dimensions.get('window').height;
   const screenWidth = Dimensions.get('window').width;
@@ -29,7 +29,7 @@ const GridComponent = ({data, onClick}: gridComponentType) => {
               {width: screenWidth / numColumns - 12},
             ]}
             onPress={() => {
-              onClick(item.id);
+            //   onClick();
             }}>
             <Text style={styles.title}>{item.name}</Text>
           </Pressable>
@@ -39,4 +39,4 @@ const GridComponent = ({data, onClick}: gridComponentType) => {
   );
 };
 
-export default GridComponent;
+export default SubGridComponent;

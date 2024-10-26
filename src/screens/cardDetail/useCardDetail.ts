@@ -32,7 +32,6 @@ export const useCardDetail = () => {
   const addToCart = async (id: string) => {
     try {
       const response = await dispatch(addOrderItem({id, quantity: 1}));
-      console.log(response);
       ToastAndroid.show('Item added to Cart.', ToastAndroid.SHORT);
     } catch (error: any) {
       ToastAndroid.show(error.message, ToastAndroid.SHORT);

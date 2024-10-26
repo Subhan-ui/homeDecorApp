@@ -418,6 +418,40 @@ export const GET_POPULAR = gql`
   }
 `;
 
+export const GET_ITEM_CATEGORY_WISE = gql`
+  query GET_ITEM_CATEGORY_WISE($categoryId: String!, $subCategoryId: String!) {
+    getSubItems(categoryId: $categoryId, subCategoryId: $subCategoryId) {
+      name
+      id
+      description
+      price
+      picture
+      category {
+        name
+        id
+      }
+      subCategory {
+        name
+        id
+      }
+      createdAt
+    }
+  }
+`;
+
+export const GET_CATEGORIES = gql`
+  query GET_CATEGORIES {
+    getCategories {
+      name
+      id
+      subCategories {
+        name
+        id
+      }
+    }
+  }
+`;
+
 export const GET_REVIEWS = gql`
   query GET_REVIEWS($id: String!) {
     getReviews(productId: $id) {

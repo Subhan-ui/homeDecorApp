@@ -5,11 +5,11 @@ import {getItems} from '../../store/slices/items.slice';
 import {RouteProp, useRoute} from '@react-navigation/native';
 import {itemsType, navigatorTypes} from '../../types/types';
 
-type CardDetailRouteProp = RouteProp<navigatorTypes, 'ItemsPage'>;
+type SetItemRoute = RouteProp<navigatorTypes, 'ItemsPage'>;
 
 export const setItemsPage = () => {
   const dispatch = useAppDispatch();
-  const route = useRoute<CardDetailRouteProp>();
+  const route = useRoute<SetItemRoute>();
   const parameters = route.params;
   const states = useAppSelector(state => state.items);
   const [items, setItems] = useState<itemsType[]>([]);

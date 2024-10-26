@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {setContext} from '@apollo/client/link/context';
 import {isAccessTokenExpired, refreshTokenAction} from '../lib/refreshToken';
+import {ToastAndroid} from 'react-native';
 
 const httpLink = createHttpLink({
   uri: 'https://home-decor-production.up.railway.app/graphql',
@@ -18,7 +19,7 @@ const authLink = setContext(async (_, {headers}) => {
     if (newTokens) {
       accessToken = newTokens.accessToken;
     } else {
-      console.log('Failed to refresh token');
+      ToastAndroid.show('Failed to refresh token', ToastAndroid.SHORT);
     }
   }
 
