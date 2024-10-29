@@ -1,4 +1,4 @@
-import {Image, Text, View} from 'react-native';
+import {Image, Pressable, Text, ToastAndroid, View} from 'react-native';
 import React from 'react';
 
 import Input from '../../components/molecules/input/Input';
@@ -11,7 +11,7 @@ import {loginInputs} from '../../constants/inputs';
 
 const Login = () => {
   const navigation = useTypeNavigation();
-  const {data, handleChange, handleSubmit} = useLogin();
+  const {data, handleChange, handleSubmit, googleLogin} = useLogin();
   const inputs = loginInputs(data);
   return (
     <View style={styles.wholeWrap}>
@@ -43,7 +43,9 @@ const Login = () => {
         <Text style={styles.otherText}>Or sign up with</Text>
         <View style={styles.imgWrap}>
           <Image source={require('../../assets/icons/facebook.png')} />
-          <Image source={require('../../assets/icons/google.png')} />
+          <Pressable onPress={() => googleLogin()}>
+            <Image source={require('../../assets/icons/google.png')} />
+          </Pressable>
         </View>
         <View style={styles.textWrap}>
           <Text style={styles.dont}>Don't have an account?</Text>

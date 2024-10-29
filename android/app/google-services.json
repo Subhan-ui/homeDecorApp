@@ -12,7 +12,20 @@
           "package_name": "com.homedecor"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "588180984406-d28p0t9lnbmagqfe9hlie05qbf5lpaqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.homedecor",
+            "certificate_hash": "86cac4e102ef6c391b4de23cb7e008e8fd51099f"
+          }
+        },
+        {
+          "client_id": "588180984406-6n4oqgglh1r57ngjnbnmlab85hek3lh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDKEGePwd567B8vFQHkVkQXn3_NheoVHjg"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588180984406-6n4oqgglh1r57ngjnbnmlab85hek3lh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

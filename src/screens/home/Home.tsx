@@ -18,7 +18,8 @@ const Home = () => {
     useCallback(() => {
       (async () => {
         await dispatch(getItems());
-        await dispatch(getUserData());
+        const res = await dispatch(getUserData());
+        console.log(res.payload)
       })();
     }, [dispatch]),
   );
@@ -27,7 +28,9 @@ const Home = () => {
       <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
         <View style={styles.headerWrap}>
           <View>
-            <Text style={styles.h1}>Hi, Welcome Back</Text>
+            <Text style={styles.h1}>
+              Hi, Welcome Back
+            </Text>
             <Text style={styles.p}>Create Spaces that bring joy</Text>
           </View>
           <Image source={require('../../assets/icons/search.png')} />

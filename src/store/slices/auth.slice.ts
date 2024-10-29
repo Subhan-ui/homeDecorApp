@@ -3,6 +3,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import client from '../../graphql/client';
 import {
   AuthState,
+  googleTypes,
   loginType,
   resetPasswordType,
   SignupSubType,
@@ -11,6 +12,7 @@ import {
 } from '../../types/types';
 import {
   FORGOT_PASSWORD,
+  GOOGLE,
   LOGIN_USER,
   RESET_PASSWORD,
   SIGNUP_USER,
@@ -37,6 +39,21 @@ export const signup = createAsyncThunk(
       return response?.data?.signup;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Sign failed');
+    }
+  },
+);
+
+export const google = createAsyncThunk(
+  'auth/google',
+  async (variables: googleTypes, {rejectWithValue}) => {
+    try {
+      const response = await client.mutate({
+        mutation: GOOGLE,
+        variables,
+      });
+      return response?.data?.googleSignIn;
+    } catch (error: any) {
+      return rejectWithValue(error.message || 'Google SignIn failed');
     }
   },
 );
@@ -149,6 +166,18 @@ const authSlice = createSlice({
         state.status = 'failed';
         state.error = action.payload as string;
       })
+      .addCase(google.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(google.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(google.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      })
       .addCase(verifyUser.pending, state => {
         state.status = 'loading';
         state.error = null;
@@ -203,7 +232,19 @@ const authSlice = createSlice({
       })
       .addCase(getUserData.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.userData = action.payload;
+        state.userData = {
+          name: action.payload.name || '',
+          email: action.payload.email || '',
+          id: action.payload.id || '',
+          mobileNumber: action.payload.mobileNumber || '',
+          dateOfBirth: action.payload.dateOfBirth || '',
+          profilePicture: action.payload.profilePicture || '',
+          address: action.payload.address || {},
+          orders: action.payload.orders || [],
+          cartItems: action.payload.cartItems || [],
+          favourites: action.payload.favourites || [],
+          reviews: action.payload.reviews || []
+        };
       })
       .addCase(getUserData.rejected, (state, action) => {
         state.status = 'failed';

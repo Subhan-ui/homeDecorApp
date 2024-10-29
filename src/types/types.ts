@@ -39,6 +39,12 @@ export type navigatorTypes = {
   Boarding: undefined;
 };
 
+export type googleTypes = {
+  name: string;
+  email: string;
+  picture: string;
+}
+
 export type userDataType = {
   name: string;
   email: string;

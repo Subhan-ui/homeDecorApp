@@ -6,7 +6,6 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import ComponentWrapperView from '../../components/componentWrapperView/ComponentWrapperView';
 import ProfileSection from '../../components/profileSection/ProfileSection';
 import ItemsProfile from '../../components/itemsProfile/ItemsProfile';
 import {styles} from './ProfileStyles';
@@ -14,12 +13,13 @@ import useTypeNavigation from '../../navigation/useTypeNavigation';
 import Img from '../../components/img/Img';
 import {useProfile} from './useProfile';
 import LogoutModal from '../../components/logoutModal/LogoutModal';
+import ComponentWrapper from '../../components/componentWrapper/ComponentWrapper';
 
 const Profile = () => {
   const navigation = useTypeNavigation();
   const {states, isVisible, setIsVisible} = useProfile();
   return (
-    <ComponentWrapperView text="My Profile" filter={false}>
+    <ComponentWrapper text="My Profile" filter={false}>
       <>
         <LogoutModal isVisible={isVisible} close={() => setIsVisible(false)} />
         <View style={styles.wrapImg}>
@@ -51,7 +51,7 @@ const Profile = () => {
           </ItemsProfile>
         </View>
       </>
-    </ComponentWrapperView>
+    </ComponentWrapper>
   );
 };
 

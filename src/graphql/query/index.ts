@@ -417,6 +417,16 @@ export const GET_POPULAR = gql`
     }
   }
 `;
+export const GOOGLE = gql`
+  mutation GOOGLE($picture: String!, $name:String!, $email: String!) {
+    googleSignIn(name: $name, email: $email, picture: $picture){
+      accessToken
+      refreshToken
+      user{
+        name
+      }
+    }
+  }`
 
 export const GET_ITEM_CATEGORY_WISE = gql`
   query GET_ITEM_CATEGORY_WISE($categoryId: String!, $subCategoryId: String!) {
